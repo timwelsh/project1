@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Project 1</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+        <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- Container for header -->
+        <div class="container"> 
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8 text-center">
+                    <h1>Project 1</h1>
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-12"><hr></div>
+            </div>
+        </div>   
+
+        <div class="container bootstrap-iso">
+            <div class="row"> 
+                <div class="col-md-2"></div>
+                <div class="col-md-8"> 
+                    <form method="post">
+                        <div class="form-group">
+                            <label class="control-label" for="date">Type in date in format YYYY-MM-DD:  </label>
+                            <input class="form-control" id="start-date" name="date" placeholder="YYYY-MM-DD" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" id="run-date" name="submit" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-12"><hr></div>
+                <div class="col-md-12 nasa">
+                    <!-- <pre id="reqObject"></pre> -->
+                    <h3 id="apod_title"></h3>
+                    <h4 id="apod_date"></h4>
+                    <img id="apod_img_id" width="350px"/>
+                    
+                    <iframe id="apod_vid_id" type="text/html" width="640" height="385" frameborder="0"></iframe>
+                    <p id="copyright"></p>
+                    
+                    <!-- <p id="apod_explaination"></p> -->
+                    <br/>
+                    <!-- <b>Return Object:</b>
+                    <pre id="returnObject"></pre> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 gifs-here">
+
+                </div>
+            </div>
+        </div> <!-- close container -->
+
+        
+        <script src="assets/javascript/app.js"></script>
+    </body>
+</html>
