@@ -1,0 +1,16 @@
+.title {
+    font-size: 100px !important;
+}
+
+#login {
+    width: 20rem;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Make login button circular */
+#login-btn {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
