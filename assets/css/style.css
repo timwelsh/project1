@@ -11,6 +11,8 @@
 /* Make login button circular */
 #login-btn {
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
+    font-size: 24px;
+    font-weight: bold;
 }
