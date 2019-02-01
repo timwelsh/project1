@@ -30,14 +30,11 @@ $(document).ready(function() {
     console.log("Error: " + errorObject.code);
     });
 
-
-    $('.launch-btn').click(function(event) {
-        event.preventDefault()
+    $('#login-btn').on("click", function() {
         
         name = $("#name-input").val().trim();
         correct = 0;
         incorrect = 0;
-        console.log(name + " name");
         database.ref().push({
             name : name,
             correct: correct,
