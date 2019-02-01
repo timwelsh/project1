@@ -10,53 +10,55 @@
     </head>
     <body>
         <section class="hero has-background-black-ter is-fullheight">
-            <div class="hero-body">
-                <div class="container">
+            <div class="hero-body columns">
+                <div class="column"></div>
+                <div class="container column is-three-quarters">
                     <h1 class="title has-text-primary is-size-1 has-text-centered is-uppercase has-text-weight-normal">
                         Space Sounds
                     </h1>
-                    <h2 class="subtitle has-text-primary is-size-3 has-text-centered has-text-weight-light">
+                    <!-- <h2 class="subtitle has-text-primary is-size-2 has-text-centered is-uppercase has-text-weight-light">
                         an expedition through the depths of space
-                    </h2>
-                    <p>
+                    </h2> -->
+                    <p class="is-size-3 has-text-light has-text-centered is-uppercase has-text-weight-light">
                     Hello, cosmic explorer!
                     We have a mission of the utmost importance for you.
-                    We have received several transmission of strange noises from outter space,
+                    We have received several transmissions of strange noises from outer space,
                     and we need your help identifying them!
                     </p>
-                    <ul>
-                        <li>Listen to the sound</li>
-                        <li>Click the image that you believe is associated with that sound</li>
-                        <li>Hit the launch button to begin</li>
+                    <br><br>
+                    <ul class="column is-half">
+                        <li class="is-size-4 has-text-light"><ion-icon name="planet"></ion-icon> Listen to the sound</li>
+                        <li class="is-size-4 has-text-light"><ion-icon name="planet"></ion-icon> Guess which image is associated with the sound</li>
+                        <li class="is-size-4 has-text-light"><ion-icon name="planet"></ion-icon> Hit the launch button to begin</li>
                     </ul>
-                    <br>
+                    <br><br>
                     <div id="login">
                         <div class="field">
                             <p class="control has-icons-left has-icons-right">
                                 <input class="input is-rounded" type="name" placeholder="Your name">
                                 <span class="icon is-small is-right">
                                     <i class="fas fa-check"></i>
-                                </span class="icon is-small is-left">
-                                <span>
-                                    <ion-icon name="rocket"></ion-icon>
-                                    <!-- <ion-icon name="person"></ion-icon> -->
-                                    <!-- <ion-icon name="planet"></ion-icon> -->
+                                </span>
+                                <span class="icon is-medium is-left">
+                                    <ion-icon name="person"></ion-icon>
                                 </span>
                             </p>
                         </div>
-                        <div class="field">
-                            <p class="control">
-                                <a href="question.html">
-                                    <button id="login-btn" class="button is-danger">
-                                    Launch
-                                    </button>
-                                </a>
-                            </p>
-                        </div>
+                    </div>
+                    <br>
+                    <div class="level field">
+                        <p class="control level-item">
+                            <a href="game.html">
+                                <button id="login-btn" class="button is-danger has-text-centered">
+                                Launch
+                                </button>
+                            </a>
+                        </p>
                     </div>
                 </div>
+                <div class="column"></div>
             </div>
         </section>
-        <iframe src="https://drive.google.com/file/d/1iyIltJbux-angGdOa6cTOQjRyui203Il/preview" width="640" height="480"></iframe>
+        <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
     </body>
 </html>
