@@ -1,67 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Project 1</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-        <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Space Sounds</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     </head>
     <body>
-        <!-- Container for header -->
-        <div class="container"> 
-            <div class="row">
-                <div class="col-md-2">
-                </div>
-                <div class="col-md-8 text-center">
-                    <h1>Project 1</h1>
-                </div>
-                <div class="col-md-2">
-                </div>
-                <div class="col-md-12"><hr></div>
-            </div>
-        </div>   
-
-        <div class="container bootstrap-iso">
-            <div class="row"> 
-                <div class="col-md-2"></div>
-                <div class="col-md-8"> 
-                    <form method="post">
-                        <div class="form-group">
-                            <label class="control-label" for="date">Type in date in format YYYY-MM-DD:  </label>
-                            <input class="form-control" id="start-date" name="date" placeholder="YYYY-MM-DD" type="text" />
+        <section class="hero has-background-black-ter is-fullheight">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title has-text-primary is-size-1 has-text-centered is-uppercase has-text-weight-normal">
+                        Space Sounds
+                    </h1>
+                    <h2 class="subtitle has-text-primary is-size-3 has-text-centered has-text-weight-light">
+                        an expedition through the depths of space
+                    </h2>
+                    <p>
+                    Hello, cosmic explorer!
+                    We have a mission of the utmost importance for you.
+                    We have received several transmission of strange noises from outter space,
+                    and we need your help identifying them!
+                    </p>
+                    <ul>
+                        <li>Listen to the sound</li>
+                        <li>Click the image that you believe is associated with that sound</li>
+                        <li>Hit the launch button to begin</li>
+                    </ul>
+                    <br>
+                    <div id="login">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input class="input is-rounded" type="name" placeholder="Your name">
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-check"></i>
+                                </span class="icon is-small is-left">
+                                <span>
+                                    <ion-icon name="rocket"></ion-icon>
+                                    <!-- <ion-icon name="person"></ion-icon> -->
+                                    <!-- <ion-icon name="planet"></ion-icon> -->
+                                </span>
+                            </p>
                         </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary" id="run-date" name="submit" type="submit">Submit</button>
+                        <div class="field">
+                            <p class="control">
+                                <a href="question.html">
+                                    <button id="login-btn" class="button is-danger">
+                                    Launch
+                                    </button>
+                                </a>
+                            </p>
                         </div>
-                    </form>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-12"><hr></div>
-                <div class="col-md-12 nasa">
-                    <!-- <pre id="reqObject"></pre> -->
-                    <h3 id="apod_title"></h3>
-                    <h4 id="apod_date"></h4>
-                    <img id="apod_img_id" width="350px"/>
-                    
-                    <iframe id="apod_vid_id" type="text/html" width="640" height="385" frameborder="0"></iframe>
-                    <p id="copyright"></p>
-                    
-                    <!-- <p id="apod_explaination"></p> -->
-                    <br/>
-                    <!-- <b>Return Object:</b>
-                    <pre id="returnObject"></pre> -->
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 gifs-here">
-
-                </div>
-            </div>
-        </div> <!-- close container -->
-
-        
-        <script src="assets/javascript/app.js"></script>
+        </section>
+        <iframe src="https://drive.google.com/file/d/1iyIltJbux-angGdOa6cTOQjRyui203Il/preview" width="640" height="480"></iframe>
     </body>
 </html>
