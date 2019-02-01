@@ -30,7 +30,7 @@ $(document).ready(function() {
     console.log("Error: " + errorObject.code);
     });
 
-    $('#login-btn').click(function(event) {
+    $('#login-btn').on("click", function(event) {
         event.preventDefault()
         
         name = $("#name-input").val().trim();
