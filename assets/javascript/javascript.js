@@ -6,25 +6,25 @@ var data = {
     array: [{
         arrayPosition : "0",
         title: "Sun Sonification",
-        wiki: "Plasma_(physics)",
-        nasa: "Plasma",
-        imageNumber: "8",
+        wiki: "Sun",
+        nasa: "Sun",
+        imageNumber: "47",
         sound: "01.wav"
         },
         {
         arrayPosition : "1",
         title: "Sounds of Saturn: Enceladus Moon Hiss",
-        wiki: "",
-        nasa: "",
-        imageNumber: "",
+        wiki: "Enceladus",
+        nasa: "Enceladus",
+        imageNumber: "1",
         sound: "02.mp3"
         },
         {
         arrayPosition : "2",
         title: "Voyager Plasma Sounds",
-        wiki: "",
-        nasa: "",
-        imageNumber: "",
+        wiki: "Plasma_(physics)",
+        nasa: "Plasma",
+        imageNumber: "44",
         sound: "03.mp3"
         },
         {
@@ -38,9 +38,9 @@ var data = {
         {
         arrayPosition : "4",
         title: "Juno: Crossing Jupiter's Bow Shock",
-        wiki: "",
-        nasa: "",
-        imageNumber: "",
+        wiki: "Bow_shocks_in_astrophysics#Around_the_Earth",
+        nasa: "Jupiter",
+        imageNumber: "58",
         sound: "05.mp3"
         },
         {
@@ -54,9 +54,9 @@ var data = {
         {
         arrayPosition : "6",
         title: "Juno: Entering Jupiter's Magnetosphere",
-        wiki: "Bow_shocks_in_astrophysics#Around_the_Earth",
-        nasa: "Jupiter",
-        imageNumber: "58",
+        wiki: "",
+        nasa: "",
+        imageNumber: "",
         sound: "07.mp3"
         },  
         {
@@ -70,25 +70,25 @@ var data = {
         {
         arrayPosition : "8",
         title: "Kepler: Star KIC7671081B Light Curve Waves to Sound",
-        wiki: "Cassini%E2%80%93Huygens",
-        nasa: "Cassini",
-        imageNumber: "35",
+        wiki: "",
+        nasa: "",
+        imageNumber: "",
         sound: "09.mp3"
         },  
         {
         arrayPosition : "9",
         title: "Voyager: Lightning on Jupiter",
-        wiki: "",
-        nasa: "",
-        imageNumber: "",
+        wiki: "Atmosphere_of_Jupiter",
+        nasa: "Jupiter Lightning",
+        imageNumber: "2",
         sound: "10.mp3"
         },  
         {
         arrayPosition : "10",
         title: "Stardust: Passing Comet Tempel 1",
-        wiki: "",
-        nasa: "",
-        imageNumber: "",
+        wiki: "Tempel_1",
+        nasa: "Tempel 1",
+        imageNumber: "8",
         sound: "11.mp3"
         },  
         {
@@ -102,9 +102,9 @@ var data = {
         {
         arrayPosition : "12",
         title: "Cassini: Saturn Radio Emissions #2",
-        wiki: "",
-        nasa: "",
-        imageNumber: "",
+        wiki: "Cassini%E2%80%93Huygens",
+        nasa: "Cassini",
+        imageNumber: "35",
         sound: "13.mp3"
         },  
         {
@@ -134,9 +134,9 @@ var data = {
         {
         arrayPosition : "16",
         title: "Plasmaspheric Hiss",
-        wiki: "",
-        nasa: "",
-        imageNumber: "",
+        wiki: "Polar_(satellite)",
+        nasa: "Plasma",
+        imageNumber: "27",
         sound: "17.mp3"
         }, 
         {
@@ -158,9 +158,9 @@ var data = {
         {
         arrayPosition : "19",
         title: "Jupiter Sounds 2001",
-        wiki: "",
-        nasa: "",
-        imageNumber: "",
+        wiki: "Jupiter",
+        nasa: "Jupiter",
+        imageNumber: "8",
         sound: "20.mp3"
         }, 
         {
@@ -182,9 +182,9 @@ var data = {
         {
         arrayPosition : "22",
         title: "Speeding Through Titan's Haze",
-        wiki: "",
-        nasa: "",
-        imageNumber: "",
+        wiki: "Titan_(moon)",
+        nasa: "Titan",
+        imageNumber: "1",
         sound: "23.mp3"
         }, 
         {
