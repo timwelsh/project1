@@ -30,6 +30,7 @@ $(document).ready(function() {
     console.log("Error: " + errorObject.code);
     });
 
+
     $('.launch-btn').click(function(event) {
         event.preventDefault()
         

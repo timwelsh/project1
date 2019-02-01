@@ -9,32 +9,43 @@
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
     </head>
     <body>
-        <section class="hero is-medium is-primary is-bold">
+        <section class="hero is-primary is-bold">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">
-                        Space Sounds
+                    <h1 class="title is-uppercase is-size-1">
+                    Space Sounds
                     </h1>
                 </div>
             </div>
         </section>
         <section class="section has-background-black-ter">
             <div class="container is-fluid">
-                <h1 class="title has-text-light	">
-                    Hello World
+                <h1 class="title has-text-light">
+                Listen
                 </h1>
-                <p class="subtitle has-text-light	">
-                    Listen to the sounds of space and guess which image is associated with the sound.
+                <p class="subtitle has-text-light has-text-weight-light">
+                Guess which image is associated with the sound
                 </p>
-                <div id="option-1">
-
-                </div>
-                <div id="option-2">
-
-                </div>
             </div>
         </section>
-        <progress class="progress is-large is-danger" value="60" max="100">60%</progress>
+        <section class="section has-background-black">
+            <!-- First answer option will be populated here -->
+            <div id="option-1">
+                <h1 id=""></h1>
+                <img id="">
+            </div>
+            <!-- Second answer option will be populated here -->
+            <div id="option-2">
+                <h1 id=""></h1>
+                <img id="">
+            </div>
+        </section>
+        <!-- Progress bar -->
+        <section class="section">
+            <div class="container">
+                <!-- Progress bar will go here -->
+            </div>
+        </section>
         <footer class="footer">
             <div class="content has-text-centered">
                 <p>
