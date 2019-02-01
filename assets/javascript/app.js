@@ -2,6 +2,49 @@
 // example: https://api.nasa.gov/planetary/apod?api_key=E0dwINrsYxiDcYZN3iRUIXooCzBUT7NBn90dq7N0
 
 $(document).ready(function() {
+    // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC2u_ttl0dFV88Dyux2lNnGa-cWwFj4nVk",
+    authDomain: "space-sounds.firebaseapp.com",
+    databaseURL: "https://space-sounds.firebaseio.com",
+    projectId: "space-sounds",
+    storageBucket: "space-sounds.appspot.com",
+    messagingSenderId: "811578548981"
+  };
+  firebase.initializeApp(config);
+
+  // Create a variable to reference the database
+  var database = firebase.database();
+
+  var name;
+  var correct;
+  var incorrect;
+  
+  database.ref().on("child_added", function(snapshot) {
+
+        name = snapshot.val().name;
+        correct = snapshot.val().correct;
+        incorrect = snapshot.val().incorrect;
+
+    }, function(errorObject) {
+    console.log("Error: " + errorObject.code);
+    });
+
+    $('#login-btn').click(function(event) {
+        event.preventDefault()
+        
+        name = $("#name-input").val().trim();
+        correct = 0;
+        incorrect = 0;
+        database.ref().push({
+            name : name,
+            correct: correct,
+            incorrect: incorrect,
+            date:firebase.database.ServerValue.TIMESTAMP
+        })
+
+    });  // End of firebase code
+
     // var dateSelected = "2019-01-22"
     var startDate = "";
     function buildQueryURL() {
