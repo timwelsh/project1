@@ -240,7 +240,7 @@ function display () { //function that makes the API calls
     .then(function(response) {
     console.log(response); 
     var results = response.collection.items[imageNumber].links[0].href;
-    var header = data.array[1].title;
+    var header = data.array[counter].title;
     if (placement === 0) {
     $("#option-1_image").attr("src", results);
     $("#option-1_header").text(header);
