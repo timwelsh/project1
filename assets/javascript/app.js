@@ -84,23 +84,19 @@ $(document).ready(function() {
         });
       });
 
-    // MODAL BUTTONS
-    // User input from button click
+    
+    // When user clicks an image, pull up modal
+    $("#option-1_image" || "#option-2_image").on("click", function(event) {
+        $(".modal").addClass("is-active");
+    });
+
+    // MODAL BUTTONS: close modal on button click or key press
     $(".modal_button").on("click", function(e) {
         $(".modal").removeClass("is-active");
     });
-
-    // User input from key press
     $(window).on("keydown", function(e) {
         if (e.keyCode === 13 || e.keyCode === 27) {
             $(".modal").removeClass("is-active");
         }
     });
-
-    // When user clicks an image, pull up modal
-    $("#option-1_image" || "#option-2_image").on("click", function(event) {
-        // pull up modal
-        $(".modal").addClass("is-active");
-    });
-
 });
