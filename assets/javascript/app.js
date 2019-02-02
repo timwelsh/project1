@@ -107,11 +107,6 @@ $(document).ready(function() {
     $(".modal_button").on("click", function(e) {
         $(".modal").removeClass("is-active");
         // TODO: When clicked, show next set of images
-        $("#option-1_header").empty();
-        $("#option-2_header").empty();
-        $("#option-1_image").empty();
-        $("#option-2_image").empty();
-
         display();
     });
     $(window).on("keydown", function(e) {
