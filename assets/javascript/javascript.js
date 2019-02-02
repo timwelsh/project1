@@ -1,4 +1,4 @@
-var counter = 0;
+var counter = -1;
 var timer;
 
 // Object that holds the information for making the AJAX calls
@@ -202,37 +202,12 @@ var data = {
 display();
 
 
-$('#moveButton').click(function(){ //name of the button that will load the next question
-    if (counter < 14){
-    counter++
-    $('#rocket').attr('src', 'assets/images/rocket.png').addClass('animation'+counter).removeClass('animation'+(counter-1));
-    timer = setTimeout(switchImage, 1000)
-    }
-    $("#rocket").attr("data-wiki",data.array[counter].wiki).attr("data-nasa",data.array[counter].nasa).attr("data-imageNumber",data.array[counter].imageNumber)
-    if (data.array[counter].wiki !== ""){
-        display();
-    }
-    else {
-        $("#picture-div").empty()
-        $("#description-div").empty()
-    }
-});
-
-$('#restartButton').click(function(){ //button that starts the game over (we don't plan on having this in the game as of right now, but good to have for testing purposes)
-    counter = 0
-    $('#rocket').removeClass();
-    $("#rocket").attr("data-wiki",data.array[counter].wiki).attr("data-nasa",data.array[counter].nasa).attr("data-imageNumber",data.array[counter].imageNumber)
-    display();
-});
-
-function switchImage () { //switches the rocket image source
-    $('#rocket').attr('src', 'assets/images/unpowered.png');
-}
 
 function display () { //function that makes the API calls
-    var nasa = $("#rocket").attr("data-nasa");
-    var wiki = $("#rocket").attr("data-wiki");
-    var imageNumber = $("#rocket").attr("data-imageNumber");
+    counter++
+    var nasa = data.array[counter].nasa
+    var wiki = data.array[counter].wiki
+    var imageNumber = data.array[counter].imageNumber
 
     //WIKI API CALL START
 
@@ -244,7 +219,7 @@ function display () { //function that makes the API calls
     xhr.onload = function() {
         var data = JSON.parse(this.response);
         var wikiInfo= data.extract;
-        $("#description-div").html(wikiInfo) //This div will be where the description goes
+        $("#option-1_header").html(wikiInfo) //This div will be where the description goes
     }
     xhr.send();
 
@@ -267,6 +242,6 @@ function display () { //function that makes the API calls
     
     image.attr("src", results);
     imageDiv.append(image);
-    $("#picture-div").html(imageDiv) //This Div will be image goes
+    $("#option-1_image").html(imageDiv) //This Div will be image goes
     });
 }
