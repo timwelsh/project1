@@ -216,7 +216,8 @@ function display () { //function that makes the API calls
     xhr.onload = function() {
         var data = JSON.parse(this.response);
         var wikiInfo= data.extract;
-        $("#option-1_header").html(wikiInfo) //This div will be where the description goes
+        $("#option-1_header").html(wikiInfo); //This div will be where the description goes
+        $("#modal-content").html(wikiInfo); // This will populate the modal text
     }
     xhr.send();
 

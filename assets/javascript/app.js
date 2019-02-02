@@ -82,7 +82,7 @@ $(document).ready(function() {
                 $("#apod_explaination").text(result.explanation);
                 $("#apod_title").text(result.title)
         });
-      });
+    });
 
     // MODAL BUTTONS
     // User input from button click
