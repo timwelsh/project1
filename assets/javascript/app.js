@@ -84,6 +84,10 @@ $(document).ready(function() {
         });
     });
 
+    // When use hovers over an image, create overlay
+    $(".image").mouseover(function(hover) {
+        
+    });
     
     // When user clicks an image, pull up modal
     $(".image").on("click", function(event) {
@@ -102,10 +106,18 @@ $(document).ready(function() {
     // MODAL BUTTONS: close modal on button click or key press
     $(".modal_button").on("click", function(e) {
         $(".modal").removeClass("is-active");
+        // TODO: When clicked, show next set of images
+        $("#option-1_header").empty();
+        $("#option-2_header").empty();
+        $("#option-1_image").empty();
+        $("#option-2_image").empty();
+
+        display();
     });
     $(window).on("keydown", function(e) {
         if (e.keyCode === 13 || e.keyCode === 27) {
             $(".modal").removeClass("is-active");
         }
     });
+
 });
