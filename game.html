@@ -19,24 +19,29 @@
             </div>
         </section>
         <section class="section has-background-black-ter">
-            <div class="container is-fluid">
-                <h1 class="title has-text-light">
-                Listen
-                </h1>
-                <p class="subtitle has-text-light has-text-weight-light">
-                Guess which image is associated with the sound
-                </p>
+            <div class="container is-fluid columns">
+                <div class="column">
+                    <h1 class="title has-text-light">
+                        Listen
+                    </h1>
+                    <p class="subtitle has-text-light has-text-weight-light">
+                        Guess which image is associated with the sound
+                    </p>
+                </div>
+                <div class="column">
+                    <audio id="audio" controls="" ></audio>
+                </div>
             </div>
         </section>
         <section class="section has-background-black">
             <!-- First answer option will be populated here -->
             <div id="option-1">
-                <h1 id="option-1_header"></h1>
+                <h1 id="option-1_header" class="is-size-2"></h1>
                 <img id="option-1_image">
             </div>
             <!-- Second answer option will be populated here -->
             <div id="option-2">
-                <h1 id="option-2_header"></h1>
+                <h1 id="option-2_header" class="is-size-2"></h1>
                 <img id="option-2_image">
             </div>
         </section>
@@ -52,7 +57,7 @@
             <div class="modal-background"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
-                    <p class="modal-card-title">Actually...</p>
+                    <p class="modal-card-title">(in)Correct</p>
                     <button class="delete" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body">
