@@ -201,17 +201,14 @@ var data = {
 
 display();
 
-
-
 function display () { //function that makes the API calls
     counter++
     var nasa = data.array[counter].nasa
     var wiki = data.array[counter].wiki
     var imageNumber = data.array[counter].imageNumber
 
+    
     //WIKI API CALL START
-
-
     var xhr = new XMLHttpRequest();
     var url = "https://en.wikipedia.org/api/rest_v1/page/summary/"+ wiki;
 
@@ -225,7 +222,6 @@ function display () { //function that makes the API calls
 
 
     // NASA API CALL START
-
     var queryURL = "https://images-api.nasa.gov/search?q="+nasa
 
     $.ajax({
