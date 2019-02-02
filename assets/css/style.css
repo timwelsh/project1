@@ -17,15 +17,6 @@
     font-weight: bold;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    background-color: #fff;
-    z-index: 200;
-  }
-  .overlay:hover {
-    display: block;
-    opacity: 0.5;
-  }
+.border {
+    border: 2px solid #fff;
+}
