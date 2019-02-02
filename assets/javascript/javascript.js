@@ -1,6 +1,8 @@
 var imageArray = [0,1,2,4,5,9,12,16,19,22]
+var imagePick = [0,1]
 var counter = -1;
 var timer;
+var answer;
 
 // Object that holds the information for making the AJAX calls
 var data = {
@@ -42,7 +44,7 @@ var data = {
         wiki: "Bow_shocks_in_astrophysics#Around_the_Earth",
         nasa: "Jupiter",
         imageNumber: "58",
-        sound: "assets/sounds/05.mp3"
+        sound: "assets/sounds/05.wav"
         },
         {
         arrayPosition : "5",
@@ -204,6 +206,7 @@ display();
 
 function display () { //function that makes the API calls
     counter = imageArray[Math.floor(Math.random() * imageArray.length)];
+    placement = imagePick[Math.floor(Math.random() * imagePick.length)];
     for (i=0; i < imageArray.length; i++) {
         if (imageArray[i] === counter ) {
             imageArray.splice(i, 1)
@@ -238,12 +241,18 @@ function display () { //function that makes the API calls
     console.log(response); 
     var results = response.collection.items[imageNumber].links[0].href;
     var header = data.array[1].title;
+    if (placement === 0) {
     $("#option-1_image").attr("src", results);
-    $("#option-2_image").attr("src", results);
     $("#option-1_header").text(header);
     $("#option-1_header").css("text-align", "center");
+    answer = 0;
+    }
+    else {
+    $("#option-2_image").attr("src", results);
     $("#option-2_header").text(header);
     $("#option-2_header").css("text-align", "center");
+    answer = 1
+    }
     var audioSource = $("<source>").attr("src", data.array[counter].sound);
     $("#audio").append(audioSource);
     $("audio").css("height", "50px");
