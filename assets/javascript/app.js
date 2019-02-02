@@ -83,4 +83,24 @@ $(document).ready(function() {
                 $("#apod_title").text(result.title)
         });
       });
+
+    // MODAL BUTTONS
+    // User input from button click
+    $(".modal_button").on("click", function(e) {
+        $(".modal").removeClass("is-active");
+    });
+
+    // User input from key press
+    $(window).on("keydown", function(e) {
+        if (e.keyCode === 13 || e.keyCode === 27) {
+            $(".modal").removeClass("is-active");
+        }
+    });
+
+    // When user clicks an image, pull up modal
+    $("#option-1_image" || "#option-2_image").on("click", function(event) {
+        // pull up modal
+        $(".modal").addClass("is-active");
+    });
+
 });
