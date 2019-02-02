@@ -241,14 +241,7 @@ function display () { //function that makes the API calls
     $("#option-2_header").text(header);
     $("#option-2_header").css("text-align", "center");
     $("#audio").attr("src", data.array[0].sound);
-    // $("#audio")[0].play();
-    // var aud = document.getElementById("audio"); 
-
-// function playAud() { 
-//     aud.play(); 
-// } 
-// playAud();
-//     console.log(data.array[counter].sound + " here");
+    $("#audio")[0].play();
     
     });
 }
