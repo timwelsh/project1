@@ -1,3 +1,4 @@
+var imageArray = [0,1,2,4,5,9,12,16,19,22]
 var counter = -1;
 var timer;
 
@@ -17,7 +18,7 @@ var data = {
         wiki: "Enceladus",
         nasa: "Enceladus",
         imageNumber: "1",
-        sound: "02.mp3"
+        sound: "assets/sounds/02.mp3"
         },
         {
         arrayPosition : "2",
@@ -25,7 +26,7 @@ var data = {
         wiki: "Plasma_(physics)",
         nasa: "Plasma",
         imageNumber: "44",
-        sound: "03.mp3"
+        sound: "assets/sounds/03.mp3"
         },
         {
         arrayPosition : "3",
@@ -33,7 +34,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "04.mp3"
+        sound: "assets/sounds/04.mp3"
         },
         {
         arrayPosition : "4",
@@ -41,7 +42,7 @@ var data = {
         wiki: "Bow_shocks_in_astrophysics#Around_the_Earth",
         nasa: "Jupiter",
         imageNumber: "58",
-        sound: "05.mp3"
+        sound: "assets/sounds/05.mp3"
         },
         {
         arrayPosition : "5",
@@ -49,7 +50,7 @@ var data = {
         wiki: "Ganymede_(moon)",
         nasa: "Ganymede",
         imageNumber: "8",
-        sound: "06.mp3"
+        sound: "assets/sounds/06.mp3"
         },  
         {
         arrayPosition : "6",
@@ -57,7 +58,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "07.mp3"
+        sound: "assets/sounds/07.mp3"
         },  
         {
         arrayPosition : "7",
@@ -65,7 +66,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "08.mp3"
+        sound: "assets/sounds/08.mp3"
         },  
         {
         arrayPosition : "8",
@@ -73,7 +74,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "09.mp3"
+        sound: "assets/sounds/09.mp3"
         },  
         {
         arrayPosition : "9",
@@ -81,7 +82,7 @@ var data = {
         wiki: "Atmosphere_of_Jupiter",
         nasa: "Jupiter Lightning",
         imageNumber: "2",
-        sound: "10.mp3"
+        sound: "assets/sounds/10.mp3"
         },  
         {
         arrayPosition : "10",
@@ -89,7 +90,7 @@ var data = {
         wiki: "Tempel_1",
         nasa: "Tempel 1",
         imageNumber: "8",
-        sound: "11.mp3"
+        sound: "assets/sounds/11.mp3"
         },  
         {
         arrayPosition : "11",
@@ -97,7 +98,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "12.mp3"
+        sound: "assets/sounds/12.mp3"
         },  
         {
         arrayPosition : "12",
@@ -105,7 +106,7 @@ var data = {
         wiki: "Cassini%E2%80%93Huygens",
         nasa: "Cassini",
         imageNumber: "35",
-        sound: "13.mp3"
+        sound: "assets/sounds/13.mp3"
         },  
         {
         arrayPosition : "13",
@@ -113,7 +114,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "14.mp3"
+        sound: "assets/sounds/14.mp3"
         },
         {
         arrayPosition : "14",
@@ -121,7 +122,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "15.mp3"
+        sound: "assets/sounds/15.mp3"
         },  
         {
         arrayPosition : "15",
@@ -129,7 +130,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "16.mp3"
+        sound: "assets/sounds/16.mp3"
         }, 
         {
         arrayPosition : "16",
@@ -137,7 +138,7 @@ var data = {
         wiki: "Polar_(satellite)",
         nasa: "Plasma",
         imageNumber: "27",
-        sound: "17.mp3"
+        sound: "assets/sounds/17.wav"
         }, 
         {
         arrayPosition : "17",
@@ -145,7 +146,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "18.mp3"
+        sound: "assets/sounds/18.mp3"
         }, 
         {
         arrayPosition : "18",
@@ -153,7 +154,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "19.mp3"
+        sound: "assets/sounds/19.mp3"
         }, 
         {
         arrayPosition : "19",
@@ -161,7 +162,7 @@ var data = {
         wiki: "Jupiter",
         nasa: "Jupiter",
         imageNumber: "8",
-        sound: "20.mp3"
+        sound: "assets/sounds/20.wav"
         }, 
         {
         arrayPosition : "20",
@@ -169,7 +170,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "21.mp3"
+        sound: "assets/sounds/21.mp3"
         }, 
         {
         arrayPosition : "21",
@@ -177,7 +178,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "22.mp3"
+        sound: "assets/sounds/22.mp3"
         }, 
         {
         arrayPosition : "22",
@@ -185,7 +186,7 @@ var data = {
         wiki: "Titan_(moon)",
         nasa: "Titan",
         imageNumber: "1",
-        sound: "23.mp3"
+        sound: "assets/sounds/23.mp3"
         }, 
         {
         arrayPosition : "23",
@@ -193,7 +194,7 @@ var data = {
         wiki: "",
         nasa: "",
         imageNumber: "",
-        sound: "24.mp3"
+        sound: "assets/sounds/24.mp3"
         }, 
     ]
     
@@ -202,7 +203,12 @@ var data = {
 display();
 
 function display () { //function that makes the API calls
-    counter++
+    counter = imageArray[Math.floor(Math.random() * imageArray.length)];
+    for (i=0; i < imageArray.length; i++) {
+        if (imageArray[i] === counter ) {
+            imageArray.splice(i, 1)
+        }
+    }
     var nasa = data.array[counter].nasa
     var wiki = data.array[counter].wiki
     var imageNumber = data.array[counter].imageNumber
@@ -216,7 +222,6 @@ function display () { //function that makes the API calls
     xhr.onload = function() {
         var data = JSON.parse(this.response);
         var wikiInfo= data.extract;
-        $("#option-1_header").html(wikiInfo); //This div will be where the description goes
         $("#modal-content").html(wikiInfo); // This will populate the modal text
     }
     xhr.send();
@@ -239,7 +244,7 @@ function display () { //function that makes the API calls
     $("#option-1_header").css("text-align", "center");
     $("#option-2_header").text(header);
     $("#option-2_header").css("text-align", "center");
-    var audioSource = $("<source>").attr("src", data.array[0].sound);
+    var audioSource = $("<source>").attr("src", data.array[counter].sound);
     $("#audio").append(audioSource);
     $("audio").css("height", "50px");
     $("audio").css("width", "300px");
