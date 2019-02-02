@@ -9,7 +9,7 @@ var data = {
         wiki: "Sun",
         nasa: "Sun",
         imageNumber: "47",
-        sound: "01.wav"
+        sound: "assets/sounds/01.wav"
         },
         {
         arrayPosition : "1",
@@ -229,15 +229,26 @@ function display () { //function that makes the API calls
     method: "GET"
     })
     .then(function(response) {
-    console.log(response)
+    console.log(response);
+    console.log(response.collection.items[imageNumber].links[0].href);
  
-
     var results = response.collection.items[imageNumber].links[0].href;
-    var imageDiv = $("<div>");
-    var image = $("<img>");
+    var header = data.array[1].title;
+    $("#option-1_image").attr("src", results);
+    $("#option-2_image").attr("src", results);
+    $("#option-1_header").text(header);
+    $("#option-1_header").css("text-align", "center");
+    $("#option-2_header").text(header);
+    $("#option-2_header").css("text-align", "center");
+    $("#audio").attr("src", data.array[0].sound);
+    // $("#audio")[0].play();
+    // var aud = document.getElementById("audio"); 
+
+// function playAud() { 
+//     aud.play(); 
+// } 
+// playAud();
+//     console.log(data.array[counter].sound + " here");
     
-    image.attr("src", results);
-    imageDiv.append(image);
-    $("#option-1_image").html(imageDiv) //This Div will be image goes
     });
 }
