@@ -86,10 +86,16 @@ $(document).ready(function() {
 
     
     // When user clicks an image, pull up modal
-    $("#option-1_image").on("click", function(event) {
-        $(".modal").addClass("is-active");
-    });
-    $("#option-2_image").on("click", function(event) {
+    $(".image").on("click", function(event) {
+        var userChoice = $("option-1_image" || "option-2_image");
+        if (userChoice === answer) {
+            correct++;
+            $("#").text("Correct!");
+        }
+        else {
+            incorrect++;
+            $(".modal-card-title").text("Correct!");
+        }
         $(".modal").addClass("is-active");
     });
 
