@@ -35,6 +35,25 @@ $(document).ready(function() {
         name = $("#name-input").val().trim();
         correct = 0;
         incorrect = 0;
+		
+		/*
+		Make sure .push() just pushes and does't overwrite (I think that's correct)
+		And then think about what happens if you put the same name in twice... how can you uniquely identify these things?
+		Might be worth storing as data[name][....] instead of just data[...]
+		
+		SO instead of 
+			data:{name:Tommy,etc}
+		could be
+			data:{
+				"Tommy Anderson":{
+					// Tommy's data
+				}
+				"Tommy Anderson":{
+					// Tommy's data
+				}
+			}
+		
+		*/
         database.ref().push({
             name : name,
             correct: correct,
@@ -52,6 +71,9 @@ $(document).ready(function() {
         return url + startDate; 
     }
 
+/*
+What is run-date? Not seeing any reference to this element anywhere in the html code?
+*/
     $("#run-date").on("click", function(event) {
         event.preventDefault();
         // clear();
@@ -95,16 +117,26 @@ $(document).ready(function() {
     // has-background-warning
 
     // When user clicks an image, pull up modal
-    $(".image").on("click", function(event) {
-        var userChoice = this.id;
+    $(".image").on("click", function(event) {	
+		/*
+		Needed to use some jquery-ish markup here instead of the vanilla js ref to not get 'undefined':
+		*/
+//		var userChoise = this.id;
+        var userChoice = $(this).attr("id");
+		console.log(userChoice, answer);
+		/*
+		Needed to explicitly remove the alternate/other class name to avoid giving it both class names and having the 'danger' one always override the background color either way.
+		*/
         if (userChoice === answer) {
             correct++;
             $(".modal-card-head").addClass("has-background-success");
+            $(".modal-card-head").removeClass("has-background-danger");
             $(".modal-card-title").text("Correct!").addClass("has-text-white");
         }
         else {
             incorrect++;
             $(".modal-card-head").addClass("has-background-danger");
+            $(".modal-card-head").removeClass("has-background-success");
             $(".modal-card-title").text("Incorrect").addClass("has-text-white");
         }
         $(".modal").addClass("is-active");

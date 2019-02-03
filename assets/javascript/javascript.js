@@ -6,7 +6,7 @@ var answer;
 
 // Object that holds the information for making the AJAX calls
 var data = {
-    array: [{
+    rightImages: [{
         arrayPosition : "0",
         title: "Sun Sonification",
         wiki: "Sun",
@@ -199,10 +199,173 @@ var data = {
         sound: "assets/sounds/24.mp3"
         }, 
     ]
+/*
+	Consider putting another data property here for your wrong pictures so you have headers and urls for them all:
+	(Also consider just randomizing this stuff in advance each time you play so you can use different 0-9 indexes
+		instead of specifying the list in that imageArray variable above.)
+*/	
+	, wrongImages:[
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+		,
+        {
+        title: "Here's a wrong image!",
+		file: "assets/images/mercury.png"
+        }	
+	]
     
 }
 
 display();
+
+
+/*
+Not entirely clear how the rounds are being tracked.
+Maybe just keep track of two vars: rounds and maxround or something like that?
+
+*/
 
 function display () { //function that makes the API calls
     $("#option-1_header").empty();
@@ -210,10 +373,13 @@ function display () { //function that makes the API calls
     $("#option-1_image").attr("src", "");
     $("#option-2_image").attr("src", "");
     $(".audio").empty()
+	
+	// Randomly picking one position in the remaining image numbers
     counter = imageArray[Math.floor(Math.random() * imageArray.length)];
+	// Randomly picking 0 or 1 to decide left or right correct image display
     placement = imagePick[Math.floor(Math.random() * imagePick.length)];
 
-    var audioSource = $("<source>").attr("src", data.array[counter].sound);
+    var audioSource = $("<source>").attr("src", data.rightImages[counter].sound);
     var audioTag = $("<audio>").attr("controls", true);
     audioTag.append(audioSource)
     $(".audio").append(audioTag)
@@ -221,14 +387,15 @@ function display () { //function that makes the API calls
     $("audio").css("height", "50px");
     $("audio").css("width", "300px");
 
+// Taking the value out of this guy so it can't be picked again
     for (i=0; i < imageArray.length; i++) {
         if (imageArray[i] === counter ) {
             imageArray.splice(i, 1)
         }
     }
-    var nasa = data.array[counter].nasa
-    var wiki = data.array[counter].wiki
-    var imageNumber = data.array[counter].imageNumber
+    var nasa = data.rightImages[counter].nasa
+    var wiki = data.rightImages[counter].wiki
+    var imageNumber = data.rightImages[counter].imageNumber
 
     
     //WIKI API CALL START
@@ -254,18 +421,28 @@ function display () { //function that makes the API calls
     .then(function(response) {
     console.log(response); 
     var results = response.collection.items[imageNumber].links[0].href;
-    var header = data.array[counter].title;
+    var header = data.rightImages[counter].title;
+	
+// Now that all the urls/data have been collected, draw the images using 0/1 left/right placement logic:
+/*
+This is why only one shows up. Still need to flesh out the logic to fill in the wrong image and header in whichever 1/2 container you don't stick the corret ones in like is being done below.
+*/
     if (placement === 0) {
-    $("#option-1_image").attr("src", results);
-    $("#option-1_header").text(header);
-    $("#option-1_header").css("text-align", "center");
-    answer = "option-1_image";
-    }
-    else {
-    $("#option-2_image").attr("src", results);
-    $("#option-2_header").text(header);
-    $("#option-2_header").css("text-align", "center");
-    answer =  "option-2_image";
-    }
+		$("#option-1_image").attr("src", results);
+		$("#option-1_header").text(header);
+		$("#option-1_header").css("text-align", "center");
+		answer = "option-1_image";
+		$("#option-2_image").attr("src", data.wrongImages[counter].file);
+		$("#option-2_header").text(data.wrongImages[counter].title);
+		$("#option-2_header").css("text-align", "center");
+    } else {
+		$("#option-2_image").attr("src", results);
+		$("#option-2_header").text(header);
+		$("#option-2_header").css("text-align", "center");
+		answer =  "option-2_image";
+		$("#option-1_image").attr("src", data.wrongImages[counter].file);
+		$("#option-1_header").text(data.wrongImages[counter].title);
+		$("#option-1_header").css("text-align", "center");
+   }
     });
 }
