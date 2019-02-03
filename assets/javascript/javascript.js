@@ -205,8 +205,22 @@ var data = {
 display();
 
 function display () { //function that makes the API calls
+    $("#option-1_header").empty();
+    $("#option-2_header").empty();
+    $("#option-1_image").attr("src", "");
+    $("#option-2_image").attr("src", "");
+    $(".audio").empty()
     counter = imageArray[Math.floor(Math.random() * imageArray.length)];
     placement = imagePick[Math.floor(Math.random() * imagePick.length)];
+
+    var audioSource = $("<source>").attr("src", data.array[counter].sound);
+    var audioTag = $("<audio>").attr("controls", true);
+    audioTag.append(audioSource)
+    $(".audio").append(audioTag)
+
+    $("audio").css("height", "50px");
+    $("audio").css("width", "300px");
+
     for (i=0; i < imageArray.length; i++) {
         if (imageArray[i] === counter ) {
             imageArray.splice(i, 1)
@@ -253,10 +267,5 @@ function display () { //function that makes the API calls
     $("#option-2_header").css("text-align", "center");
     answer = 1
     }
-    var audioSource = $("<source>").attr("src", data.array[counter].sound);
-    $("#audio").append(audioSource);
-    $("audio").css("height", "50px");
-    $("audio").css("width", "300px");
-    
     });
 }
