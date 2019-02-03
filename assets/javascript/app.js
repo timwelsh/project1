@@ -15,7 +15,7 @@ $(document).ready(function() {
 
   // Create a variable to reference the database
   var database = firebase.database();
-
+  var counter2 = 0;
   var name;
   var correct;
   var incorrect;
@@ -108,11 +108,25 @@ $(document).ready(function() {
         $(".modal").removeClass("is-active");
         // TODO: When clicked, show next set of images
         display();
+        moveRocket();
     });
     $(window).on("keydown", function(e) {
         if (e.keyCode === 13 || e.keyCode === 27) {
             $(".modal").removeClass("is-active");
         }
     });
+
+    function moveRocket (){ //name of the button that will load the next question
+        counter2++
+        if (counter2 < 14){
+        $('#rocket').attr('src', 'assets/images/rocket.png').addClass('animation'+counter2).removeClass('animation'+(counter2-1));
+        timer = setTimeout(switchImage, 1000)
+        }
+    };
+
+    
+    function switchImage () { //switches the rocket image source
+        $('#rocket').attr('src', 'assets/images/unpowered.png');
+    }
 
 });
