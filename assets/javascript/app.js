@@ -96,7 +96,7 @@ $(document).ready(function() {
 
     // When user clicks an image, pull up modal
     $(".image").on("click", function(event) {
-        var userChoice = $("option-1_image" || "option-2_image");
+        var userChoice = this.id;
         if (userChoice === answer) {
             correct++;
             $(".modal-card-head").addClass("has-background-success");

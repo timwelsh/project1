@@ -259,13 +259,13 @@ function display () { //function that makes the API calls
     $("#option-1_image").attr("src", results);
     $("#option-1_header").text(header);
     $("#option-1_header").css("text-align", "center");
-    answer = 0;
+    answer = "option-1_image";
     }
     else {
     $("#option-2_image").attr("src", results);
     $("#option-2_header").text(header);
     $("#option-2_header").css("text-align", "center");
-    answer = 1
+    answer =  "option-2_image";
     }
     });
 }
