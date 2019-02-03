@@ -89,16 +89,23 @@ $(document).ready(function() {
         
     });
     
+    // TODO: Modal header will be green or yellow when answer is correct or incorrect
+    // has-text-white	
+    // has-background-success
+    // has-background-warning
+
     // When user clicks an image, pull up modal
     $(".image").on("click", function(event) {
         var userChoice = $("option-1_image" || "option-2_image");
         if (userChoice === answer) {
             correct++;
-            $("#").text("Correct!");
+            $(".modal-card-head").addClass("has-background-success");
+            $(".modal-card-title").text("Correct!").addClass("has-text-white");
         }
         else {
             incorrect++;
-            $(".modal-card-title").text("Correct!");
+            $(".modal-card-head").addClass("has-background-danger");
+            $(".modal-card-title").text("Incorrect").addClass("has-text-white");
         }
         $(".modal").addClass("is-active");
     });
@@ -106,7 +113,6 @@ $(document).ready(function() {
     // MODAL BUTTONS: close modal on button click or key press
     $(".modal_button").on("click", function(e) {
         $(".modal").removeClass("is-active");
-        // TODO: When clicked, show next set of images
         display();
         moveRocket();
     });
