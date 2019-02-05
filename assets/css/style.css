@@ -114,12 +114,12 @@
 
 /* PROGRESS BAR */
 #rocket {
-    height:7.5vh;
+    height:auto;
     width:5vw;
     position: absolute;
     z-index:10;
-    margin-top: 6.25vh;
-    margin-left: 2.5vw;
+    margin-top: 2.5%;
+    margin-left: 7vw;
 }
 
 .planetImage {
@@ -129,73 +129,75 @@
 
 #sun {
     width: 10vw;
-    height: 20vh;
-    margin-left: -5vw;
+    height: auto;
+    margin-left: 0vw;
 }
 
 #mercury {
     width: 3vw;
-    height: 6vh;
-    margin-top: 7vh;
-    margin-left: 8vw;
+    height: auto;
+    margin-top: 3.5%;
+    margin-left: 15vw;
 }
 
 #venus {
     width: 5vw;
-    height: 10vh;
-    margin-top: 5vh;
-    margin-left: 13vw;
+    height: auto;
+    margin-top: 2.5%;
+    margin-left: 23vw;
 }
 #earth {
     width: 5vw;
-    height: 10vh;
-    margin-top: 5vh;
-    margin-left: 19vw;
+    height: auto;
+    margin-top: 2.5%;
+    margin-left: 33vw;
 }
 
 #mars {
     width: 4vw;
-    height: 8vh;
-    margin-top: 6vh;
-    margin-left: 26.5vw;
+    height: auto;
+    margin-top: 3%;
+    margin-left: 43vw;
 }
 
 #jupiter {
     width: 8vw;
-    height: 16vh;
-    margin-top: 2vh;
-    margin-left: 36vw;
+    height: auto;
+    margin-top: 1%;
+    margin-left: 52vw;
 }
 
 #saturn {
     width: 6vw;
-    height: 12vh;
-    margin-top: 4vh;
-    margin-left: 51.25vw;
+    height: auto;
+    margin-top: 1.9%;
+    margin-left: 65vw;
 }
 
 #uranus {
     width: 6vw;
-    height: 12vh;
-    margin-top: 4vh;
-    margin-left: 64vw;
+    height: auto;
+    margin-top: 1.9%;
+    margin-left: 76vw;
 }
 
 #neptune {
     width: 6vw;
-    height: 12vh;
-    margin-top: 4vh;
-    margin-left: 77vw;
+    height: auto;
+    margin-top: 1.9%;
+    margin-left: 87vw;
 }
 
 #kuiper {
+    position: relative;
     width: 5vw;
-    height: 20vh;
+    height: 100%;
     margin-top: 0;
     margin-left: 95vw;
 }
 
 .progress-bar {
+    width: 100%;
     height: 20vh;
     background-color: black;
 }
@@ -203,215 +205,138 @@
 /* All animations below generated with Bounce.js. Edit at https://goo.gl/HQ2JuX */
 
 .animation1 {
-animation: animation 4000ms linear both;
+animation: animation 6000ms linear both;
 }
 @keyframes animation { 
 0% { transform: translatex(0vw) }
-4.3% {  transform: translatex(2.75vw)}
-8.61% { transform: translatex(5.60vw) }
-12.91% { transform: translatex(6.90vw) }
-17.22% { transform: translatex(7.20vw) }
-28.33% { transform: translatex(6.65vw)}
-39.44% { transform: translatex(6.45vw) }
-61.66% {  transform: translatex(6.48vw) }
-83.98% { transform: translatex(6.44vw)}
-100% { transform: translatex(6.50vw)  } 
+4.3% {  transform: translatex(3.78vw)}
+8.61% { transform: translatex(7.74vw) }
+12.91% { transform: translatex(9.54vw) }
+17.22% { transform: translatex(9.99vw) }
+28.33% { transform: translatex(9.18vw)}
+39.44% { transform: translatex(8.93vw) }
+61.66% {  transform: translatex(8.97vw) }
+83.98% { transform: translatex(8.92vw)}
+100% { transform: translatex(9vw)  } 
 }
-.animation3 {
-animation: animation3 4000ms linear both;
-}
-@keyframes animation3 { 
-0% { transform: translatex(13vw) }
-4.3% {  transform: translatex(15.75vw)}
-8.61% { transform: translatex(18.60vw) }
-12.91% { transform: translatex(19.90vw) }
-17.22% { transform: translatex(20.20vw) }
-28.33% { transform: translatex(19.65vw)}
-39.44% { transform: translatex(19.45vw) }
-61.66% {  transform: translatex(19.48vw) }
-83.98% { transform: translatex(19.44vw)}
-100% { transform: translatex(19.50vw)  } 
-}
-.animation5 {
-animation: animation5 4000ms linear both;
-}
-@keyframes animation5 { 
-0% { transform: translatex(26vw) }
-4.3% {  transform: translatex(28.75vw)}
-8.61% { transform: translatex(31.60vw) }
-12.91% { transform: translatex(32.90vw) }
-17.22% { transform: translatex(33.20vw) }
-28.33% { transform: translatex(32.65vw)}
-39.44% { transform: translatex(32.45vw) }
-61.66% {  transform: translatex(32.48vw) }
-83.98% { transform: translatex(32.44vw)}
-100% { transform: translatex(32.50vw)  } 
-}
-.animation7 {
-animation: animation7 4000ms linear both;
-}
-@keyframes animation7 { 
-0% { transform: translatex(39vw) }
-4.3% {  transform: translatex(41.75vw)}
-8.61% { transform: translatex(44.60vw) }
-12.91% { transform: translatex(45.90vw) }
-17.22% { transform: translatex(46.20vw) }
-28.33% { transform: translatex(45.65vw)}
-39.44% { transform: translatex(45.45vw) }
-61.66% {  transform: translatex(45.48vw) }
-83.98% { transform: translatex(45.44vw)}
-100% { transform: translatex(45.50vw)  } 
-}
-.animation9 {
-animation: animation9 4000ms linear both;
-}
-@keyframes animation9 { 
-0% { transform: translatex(52vw) }
-4.3% {  transform: translatex(54.75vw)}
-8.61% { transform: translatex(57.60vw) }
-12.91% { transform: translatex(58.90vw) }
-17.22% { transform: translatex(59.20vw) }
-28.33% { transform: translatex(58.65vw)}
-39.44% { transform: translatex(58.45vw) }
-61.66% {  transform: translatex(58.48vw) }
-83.98% { transform: translatex(58.44vw)}
-100% { transform: translatex(58.50vw)  } 
-}
-
-.animation11 {
-animation: animation11 4000ms linear both;
-}
-@keyframes animation11 { 
-0% { transform: translatex(65vw) }
-4.3% {  transform: translatex(67.75vw)}
-8.61% { transform: translatex(70.60vw) }
-12.91% { transform: translatex(71.90vw) }
-17.22% { transform: translatex(72.20vw) }
-28.33% { transform: translatex(71.65vw)}
-39.44% { transform: translatex(71.45vw) }
-61.66% {  transform: translatex(71.48vw) }
-83.98% { transform: translatex(71.44vw)}
-100% { transform: translatex(71.50vw)  } 
-}
-
-.animation13 {
-animation: animation13 4000ms linear both;
-}
-@keyframes animation13 { 
-0% { transform: translatex(78vw) }
-4.3% {  transform: translatex(80.75vw)}
-8.61% { transform: translatex(83.60vw) }
-12.91% { transform: translatex(84.90vw) }
-17.22% { transform: translatex(85.20vw) }
-28.33% { transform: translatex(84.65vw)}
-39.44% { transform: translatex(84.45vw) }
-61.66% {  transform: translatex(84.48vw) }
-83.98% { transform: translatex(84.44vw)}
-100% { transform: translatex(84.50vw)  } 
-}
-
 .animation2 {
-animation: animation2 4000ms linear both;
+animation: animation2 6000ms linear both;
 }
 @keyframes animation2 { 
-0% { transform: translatex(6.50vw) }
-4.3% {  transform: translatex(9.25vw)}
-8.61% { transform: translatex(12.10vw) }
-12.91% { transform: translatex(13.40vw) }
-17.22% { transform: translatex(13.70vw) }
-28.33% { transform: translatex(13.15vw)}
-39.44% { transform: translatex(12.95vw) }
-61.66% {  transform: translatex(12.98vw) }
-83.98% { transform: translatex(12.94vw)}
-100% { transform: translatex(13vw)  } 
+0% { transform: translatex(9vw) }
+4.3% {  transform: translatex(13.28vw)}
+8.61% { transform: translatex(17.24vw) }
+12.91% { transform: translatex(19.04vw) }
+17.22% { transform: translatex(19.49vw) }
+28.33% { transform: translatex(18.68vw)}
+39.44% { transform: translatex(18.43vw) }
+61.66% {  transform: translatex(18.47vw) }
+83.98% { transform: translatex(18.42vw)}
+100% { transform: translatex(18.5vw)  } 
+}
+.animation3 {
+animation: animation3 6000ms linear both;
+}
+@keyframes animation3 { 
+0% { transform: translatex(18.5vw) }
+4.3% {  transform: translatex(23.78vw)}
+8.61% { transform: translatex(27.74vw) }
+12.91% { transform: translatex(29.54vw) }
+17.22% { transform: translatex(29.59vw) }
+28.33% { transform: translatex(29.18vw)}
+39.44% { transform: translatex(28.93vw) }
+61.66% {  transform: translatex(28.97vw) }
+83.98% { transform: translatex(28.92vw)}
+100% { transform: translatex(29vw)  } 
 }
 .animation4 {
-animation: animation4 4000ms linear both;
+animation: animation4 6000ms linear both;
 }
 @keyframes animation4 { 
-0% { transform: translatex(19.50vw) }
-4.3% {  transform: translatex(22.25vw)}
-8.61% { transform: translatex(25.10vw) }
-12.91% { transform: translatex(26.40vw) }
-17.22% { transform: translatex(26.70vw) }
-28.33% { transform: translatex(26.15vw)}
-39.44% { transform: translatex(25.95vw) }
-61.66% {  transform: translatex(25.98vw) }
-83.98% { transform: translatex(25.94vw)}
-100% { transform: translatex(26vw)  } 
+0% { transform: translatex(29vw) }
+4.3% {  transform: translatex(32.78vw)}
+8.61% { transform: translatex(35.74vw) }
+12.91% { transform: translatex(38.54vw) }
+17.22% { transform: translatex(38.59vw) }
+28.33% { transform: translatex(38.18vw)}
+39.44% { transform: translatex(37.93vw) }
+61.66% {  transform: translatex(37.97vw) }
+83.98% { transform: translatex(37.92vw)}
+100% { transform: translatex(38vw)  } 
+}
+.animation5 {
+animation: animation5 6000ms linear both;
+}
+@keyframes animation5 { 
+0% { transform: translatex(38vw) }
+4.3% {  transform: translatex(45.28vw)}
+8.61% { transform: translatex(48.24vw) }
+12.91% { transform: translatex(50.04vw) }
+17.22% { transform: translatex(51.09vw) }
+28.33% { transform: translatex(50.68vw)}
+39.44% { transform: translatex(50.43vw) }
+61.66% {  transform: translatex(50.47vw) }
+83.98% { transform: translatex(50.42vw)}
+100% { transform: translatex(50.5vw)  } 
 }
 .animation6 {
-animation: animation6 4000ms linear both;
+animation: animation6 6000ms linear both;
 }
 @keyframes animation6 { 
-0% { transform: translatex(32.50vw) }
-4.3% {  transform: translatex(35.25vw)}
-8.61% { transform: translatex(38.10vw) }
-12.91% { transform: translatex(39.40vw) }
-17.22% { transform: translatex(39.70vw) }
-28.33% { transform: translatex(39.15vw)}
-39.44% { transform: translatex(38.95vw) }
-61.66% {  transform: translatex(38.98vw) }
-83.98% { transform: translatex(38.94vw)}
-100% { transform: translatex(39vw)  } 
+0% { transform: translatex(50.5vw) }
+4.3% {  transform: translatex(56.28vw)}
+8.61% { transform: translatex(59.24vw) }
+12.91% { transform: translatex(61.04vw) }
+17.22% { transform: translatex(62.09vw) }
+28.33% { transform: translatex(61.68vw)}
+39.44% { transform: translatex(61.43vw) }
+61.66% {  transform: translatex(61.47vw) }
+83.98% { transform: translatex(61.42vw)}
+100% { transform: translatex(61.5vw)  } 
+}
+.animation7 {
+animation: animation7 6000ms linear both;
+}
+@keyframes animation7 { 
+0% { transform: translatex(61.5vw) }
+4.3% {  transform: translatex(67.28vw)}
+8.61% { transform: translatex(70.24vw) }
+12.91% { transform: translatex(72.04vw) }
+17.22% { transform: translatex(73.09vw) }
+28.33% { transform: translatex(72.68vw)}
+39.44% { transform: translatex(72.43vw) }
+61.66% {  transform: translatex(72.47vw) }
+83.98% { transform: translatex(72.42vw)}
+100% { transform: translatex(72.5vw)  } 
 }
 .animation8 {
-animation: animation8 4000ms linear both;
+animation: animation8 6000ms linear both;
 }
 @keyframes animation8 { 
-0% { transform: translatex(45.50vw) }
-4.3% {  transform: translatex(48.25vw)}
-8.61% { transform: translatex(51.10vw) }
-12.91% { transform: translatex(52.40vw) }
-17.22% { transform: translatex(52.70vw) }
-28.33% { transform: translatex(52.15vw)}
-39.44% { transform: translatex(51.95vw) }
-61.66% {  transform: translatex(51.98vw) }
-83.98% { transform: translatex(51.94vw)}
-100% { transform: translatex(52vw)  } 
+0% { transform: translatex(72.5vw) }
+4.3% {  transform: translatex(78.28vw)}
+8.61% { transform: translatex(81.24vw) }
+12.91% { transform: translatex(83.04vw) }
+17.22% { transform: translatex(84.09vw) }
+28.33% { transform: translatex(83.68vw)}
+39.44% { transform: translatex(83.43vw) }
+61.66% {  transform: translatex(83.47vw) }
+83.98% { transform: translatex(83.42vw)}
+100% { transform: translatex(83.5vw)  } 
 }
-.animation10 {
-animation: animation10 4000ms linear both;
+.animation9 {
+animation: animation9 6000ms linear both;
 }
-@keyframes animation10 { 
-0% { transform: translatex(58.50vw) }
-4.3% {  transform: translatex(61.25vw)}
-8.61% { transform: translatex(64.10vw) }
-12.91% { transform: translatex(65.40vw) }
-17.22% { transform: translatex(65.70vw) }
-28.33% { transform: translatex(65.15vw)}
-39.44% { transform: translatex(64.95vw) }
-61.66% {  transform: translatex(64.98vw) }
-83.98% { transform: translatex(64.94vw)}
-100% { transform: translatex(65vw)  } 
+@keyframes animation9 { 
+0% { transform: translatex(83.5vw) }
+4.3% {  transform: translatex(84.28vw)}
+8.61% { transform: translatex(87.24vw) }
+12.91% { transform: translatex(89.04vw) }
+17.22% { transform: translatex(90.09vw) }
+28.33% { transform: translatex(89.68vw)}
+39.44% { transform: translatex(89.43vw) }
+61.66% {  transform: translatex(89.47vw) }
+83.98% { transform: translatex(89.42vw)}
+100% { transform: translatex(89.5vw)  } 
 }
-.animation12 {
-animation: animation12 4000ms linear both;
-}
-@keyframes animation12 { 
-0% { transform: translatex(71vw) }
-4.3% {  transform: translatex(74.25vw)}
-8.61% { transform: translatex(77.10vw) }
-12.91% { transform: translatex(78.40vw) }
-17.22% { transform: translatex(78.70vw) }
-28.33% { transform: translatex(78.15vw)}
-39.44% { transform: translatex(77.95vw) }
-61.66% {  transform: translatex(77.98vw) }
-83.98% { transform: translatex(77.94vw)}
-100% { transform: translatex(78vw)  } 
-}
-.animation14 {
-animation: animation14 4000ms linear both;
-}
-@keyframes animation14 { 
-0% { transform: translatex(84vw) }
-4.3% {  transform: translatex(87.25vw)}
-8.61% { transform: translatex(90.10vw) }
-12.91% { transform: translatex(91.40vw) }
-17.22% { transform: translatex(91.70vw) }
-28.33% { transform: translatex(91.15vw)}
-39.44% { transform: translatex(90.95vw) }
-61.66% {  transform: translatex(90.98vw) }
-83.98% { transform: translatex(90.94vw)}
-100% { transform: translatex(91vw)  } 
-}
+
