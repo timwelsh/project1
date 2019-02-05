@@ -229,7 +229,6 @@ function display () { //function that makes the API calls
     var nasa = data.array[counter].nasa
     var wiki = data.array[counter].wiki
     var imageNumber = data.array[counter].imageNumber
-
     
     //WIKI API CALL START
     var xhr = new XMLHttpRequest();

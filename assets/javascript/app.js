@@ -94,6 +94,8 @@ $(document).ready(function() {
     // has-background-success
     // has-background-warning
 
+    var clickCounter;
+
     // When user clicks an image, pull up modal
     $(".image").on("click", function(event) {
         var userChoice = this.id;
@@ -108,6 +110,11 @@ $(document).ready(function() {
             $(".modal-card-title").text("Incorrect").addClass("has-text-white");
         }
         $(".modal").addClass("is-active");
+        clickCounter++
+
+        if (clickCounter > 10) {
+            
+        }
     });
 
     // MODAL BUTTONS: close modal on button click or key press
