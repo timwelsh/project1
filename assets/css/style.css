@@ -42,6 +42,10 @@
       cursor: pointer;
 }
 
+footer {
+    z-index: 100;
+}
+
 /* LANDING PAGE */
 @keyframes move-twink-back {
     from {background-position:0 0;}
