@@ -34,7 +34,8 @@
       -webkit-filter: grayscale(0%);
       filter: none;
       /* My cursor hover over rocket ship needs help */
-      cursor: url(../images/rocket-burn.png), auto;
+      /* cursor: url(../images/rocket-burn.png), auto; */
+      cursor: pointer;
 }
 
 /* LANDING PAGE */
