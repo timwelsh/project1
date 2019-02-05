@@ -71,7 +71,7 @@ $(document).ready(function() {
             name = "Tim";  //TODO: temporarily in here until TW fixes the firebase reference
             // Game over logic
             if (total === 2) {
-                window.open("gameover.html");
+                window.location = "gameover.html";
                 endOfGame(correct, incorrect, name);
             } else {
                 display();
