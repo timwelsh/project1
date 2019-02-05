@@ -38,13 +38,7 @@ $(document).ready(function() {
 
     // When use hovers over an image, create overlay
     $(".image").mouseover(function(hover) {
-        
     });
-    
-    // TODO: Modal header will be green or yellow when answer is correct or incorrect
-    // has-text-white	
-    // has-background-success
-    // has-background-warning
 
     var clickCounter;
 
@@ -83,14 +77,13 @@ $(document).ready(function() {
                 display();
                 moveRocket();
             }
-
         });
+
         $(window).on("keydown", function(e) {
             if (e.keyCode === 13 || e.keyCode === 27) {
                 $(".modal").removeClass("is-active");
             }
         });
-
 
     function moveRocket (){ //name of the button that will load the next question
         counter2++
