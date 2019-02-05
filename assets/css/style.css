@@ -7,11 +7,15 @@
 /* Make login button circular */
 #login-btn {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     font-size: 24px;
     font-weight: bold;
 }
+
+/* #landing-page_image {
+    max-width: 90%;
+} */
 
 .border {
     border: 2px solid #fff;
