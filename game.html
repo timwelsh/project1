@@ -14,46 +14,16 @@
     <body>
         <section class="hero is-primary is-bold">
             <div class="hero-body">
-                <div class="container">
-                    <h1 class="title is-uppercase is-size-1">
-                    Space Sounds
-                    </h1>
-                </div>
-            </div>
-        </section>
-        <section class="section has-background-black-ter">
-            <div class="container is-fluid columns">
-                <div class="column">
-                    <h1 class="title has-text-light">
-                        Listen
-                    </h1>
-                    <p class="subtitle has-text-light has-text-weight-light">
-                        Guess which image is associated with the sound
+                <div class="container has-text-centered">
+                    <p id="title" class="title is-uppercase">
+                        <a href="index.html">Space Sounds</a>
                     </p>
                 </div>
-                <div class="column audio">
-                </div>
             </div>
         </section>
-        <section class="section columns has-background-black">
-            <!-- First answer option will be populated here -->
 
-            <div id="option-1" class="column is-half">
-                <h1 id="option-1_header" class="title has-text-light"></h1>
-                <br>
-                <img id="option-1_image" class="image grayscale">
-                <div class="overlay"></div>
-            </div>
-            <!-- Second answer option will be populated here -->
-            <div id="option-2" class="column is-half">
-                <h1 id="option-2_header" class="title has-text-light"></h1>
-                <br>
-                <img id="option-2_image" class="image grayscale">
-                <div class="overlay"></div>
-            </div>
-        </section>
         <!-- Progress bar -->
-        <section class="progress-bar">
+        <section class="container progress-bar is-fullhd">
             <img src="assets/images/unpowered.png" id="rocket">
             <img src="assets/images/sun.png" class="planetImage" id="sun">
             <img src="assets/images/mercury.png" class="planetImage" id="mercury">
@@ -65,6 +35,43 @@
             <img src="assets/images/uranus.png" class="planetImage" id="uranus">
             <img src="assets/images/neptune.png" class="planetImage" id="neptune">
             <img src="assets/images/kuiper.png" class="planetImage" id="kuiper">
+        </section>
+
+        <section class="container is-fullhd has-background-black">
+            <div>
+                <p class="title has-text-white has-text-centered">
+                Listen
+                </p>
+                <p class="subtitle has-text-white has-text-centered has-text-weight-light">
+                Click on the image that is associated with the sound
+                </p>
+                <div class="audio-wrapper">
+                    <div class="audio"></div>
+                </div>
+            </div>
+            <br>
+        </section>
+
+
+        <section class="section columns has-background-black">
+            <div class="container">
+                <!-- First answer option will be populated here -->
+                <div id="option-1" class="column is-half">
+                    <div class="image-wrapper">
+                        <h1 id="option-1_header" class="title has-text-white has-text-centered"></h1>
+                        <img id="option-1_image" class="image grayscale">
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+                <!-- Second answer option will be populated here -->
+                <div id="option-2" class="column is-half">
+                    <div class="image-wrapper">
+                        <h1 id="option-2_header" class="title has-text-white has-text-centered"></h1>
+                        <img id="option-2_image" class="image grayscale">
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Modal: pops up when user answers incorrectly -->

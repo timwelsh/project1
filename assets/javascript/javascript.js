@@ -213,7 +213,7 @@ function display () { //function that makes the API calls
     counter = imageArray[Math.floor(Math.random() * imageArray.length)];
     placement = imagePick[Math.floor(Math.random() * imagePick.length)];
 
-    var audioSource = $("<source>").attr("src", data.array[counter].sound);
+    var audioSource = $("<source>").attr("src", data.array[counter].sound); //.css({display: 'block', width: '100%', margin: '0 auto'});
     var audioTag = $("<audio>").attr("controls", true);
     audioTag.append(audioSource)
     $(".audio").append(audioTag)
