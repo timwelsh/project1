@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Space Sounds</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <link href="gameover.html">
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
     </head>
@@ -27,23 +26,19 @@
         </section>
         <section class="section">
             <div class="container">
-            <h1 class="title">Congratulations!</h1>
-            <h2 class="subtitle">
-                You finished the game
+            <h1 class="title has-text-white">Congratulations!</h1>
+            <h2 class="subtitle has-text-white">
+                You finished the game <h2 id="player"></h2>
             </h2>
             </div>
         </section>
-
+ 
         <!-- Scores -->
         <section class="section">
             <div class="container">
-            <h1 class="title">Score</h1>
-            <h2 class="subtitle">
-                Correct: 
-            </h2>
-            <h2 class="subtitle">
-                Inorrect: 
-            </h2>
+            <h1 class="title has-text-white">Score</h1>
+            <h2 class="subtitle has-text-white">Correct: </h2><h2 id="correct"></h2>
+            <h2 class="subtitle has-text-white">Inorrect: </h2><h2 id="incorrect"></h2>
             </div>
         </section>
         <footer class="footer">

@@ -217,7 +217,6 @@ function display () { //function that makes the API calls
     var audioTag = $("<audio>").attr("controls", true);
     audioTag.append(audioSource)
     $(".audio").append(audioTag)
-
     $("audio").css("height", "50px");
     $("audio").css("width", "300px");
 
@@ -229,42 +228,43 @@ function display () { //function that makes the API calls
     var nasa = data.array[counter].nasa
     var wiki = data.array[counter].wiki
     var imageNumber = data.array[counter].imageNumber
-    
-    //WIKI API CALL START
-    var xhr = new XMLHttpRequest();
-    var url = "https://en.wikipedia.org/api/rest_v1/page/summary/"+ wiki;
 
-    xhr.open('GET', url, true);
-    xhr.onload = function() {
-        var data = JSON.parse(this.response);
-        var wikiInfo= data.extract;
-        $("#modal-content").html(wikiInfo); // This will populate the modal text
-    }
-    xhr.send();
+    //TODO: commented WIKI API out for testing b/c it was timing out and was slow
+    //WIKI API CALL START
+    // var xhr = new XMLHttpRequest();
+    // var url = "https://en.wikipedia.org/api/rest_v1/page/summary/"+ wiki;
+
+    // xhr.open('GET', url, true);
+    // xhr.onload = function() {
+    //     var data = JSON.parse(this.response);
+    //     var wikiInfo= data.extract;
+    //     $("#modal-content").html(wikiInfo); // This will populate the modal text
+    // }
+    // xhr.send();
 
 
     // NASA API CALL START
     var queryURL = "https://images-api.nasa.gov/search?q="+nasa
 
     $.ajax({
-    url: queryURL,
-    method: "GET"
+        url: queryURL,
+        method: "GET"
     })
     .then(function(response) {
-    console.log(response); 
-    var results = response.collection.items[imageNumber].links[0].href;
-    var header = data.array[counter].title;
-    if (placement === 0) {
-    $("#option-1_image").attr("src", results);
-    $("#option-1_header").text(header);
-    $("#option-1_header").css("text-align", "center");
-    answer = "option-1_image";
+        // console.log(response); 
+        var results = response.collection.items[imageNumber].links[0].href;
+        var header = data.array[counter].title;
+        if (placement === 0) {
+        $("#option-1_image").attr("src", results);
+        $("#option-1_header").text(header);
+        $("#option-1_header").css("text-align", "center");
+        answer = "option-1_image";
     }
     else {
-    $("#option-2_image").attr("src", results);
-    $("#option-2_header").text(header);
-    $("#option-2_header").css("text-align", "center");
-    answer =  "option-2_image";
+        $("#option-2_image").attr("src", results);
+        $("#option-2_header").text(header);
+        $("#option-2_header").css("text-align", "center");
+        answer =  "option-2_image";
     }
     });
 }
