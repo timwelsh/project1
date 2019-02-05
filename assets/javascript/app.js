@@ -16,33 +16,25 @@ $(document).ready(function() {
   // Create a variable to reference the database
   var database = firebase.database();
   var counter2 = 0;
-  var name;
-  var correct;
-  var incorrect;
-  
-  database.ref().on("child_added", function(snapshot) {
+  var name = "";
+  var correct = 0;
+  var incorrect = 0;
+  var newPostKey = firebase.database().ref().child('posts').push().key;
 
-        name = snapshot.val().name;
-        correct = snapshot.val().correct;
-        incorrect = snapshot.val().incorrect;
+//TODO: Need to fix the firebase reference to the specifically saved record
+  database.ref().on("child_added", function(snapshot) {
+        $("#player").text(snapshot.val().name).addClass("has-text-white");
+        $("#correct").text(snapshot.val().correct).addClass("has-text-white");
+        $("#incorrect").text(snapshot.val().incorrect).addClass("has-text-white");
 
     }, function(errorObject) {
-    console.log("Error: " + errorObject.code);
+        console.log("Error: " + errorObject.code);
     });
 
     $('#login-btn').on("click", function() {
-        
-        name = $("#name-input").val().trim();
-        correct = 0;
-        incorrect = 0;
-        database.ref().push({
-            name : name,
-            correct: correct,
-            incorrect: incorrect,
-            date:firebase.database.ServerValue.TIMESTAMP
-        })
+         var name = $("#name-input").val().trim();
 
-    });  // End of firebase code
+    });  
 
     // var dateSelected = "2019-01-22"
     var startDate = "";
@@ -63,24 +55,23 @@ $(document).ready(function() {
         }).then(function(result) {
             if("copyright" in result) {
                 $("#copyright").text("Image Credits: " + result.copyright);
-                }
-                else {
+            }
+            else {
                 $("#copyright").text("Image Credits: " + "Public Domain");
-                }
+            }
                 
-                if(result.media_type == "video") {
+            if(result.media_type == "video") {
                 $("#apod_img_id").css("display", "none"); 
                 $("#apod_vid_id").attr("src", result.url);
-                }
-                else {
+            }
+            else {
                 $("#apod_vid_id").css("display", "none"); 
                 $("#apod_img_id").attr("src", result.url);
-                }
-                $("#apod_date").text(result.date);
-                // $("#reqObject").text(url);
-                $("#returnObject").text(JSON.stringify(result, null, 4));  
-                $("#apod_explaination").text(result.explanation);
-                $("#apod_title").text(result.title)
+            }
+            $("#apod_date").text(result.date);
+            $("#returnObject").text(JSON.stringify(result, null, 4));  
+            $("#apod_explaination").text(result.explanation);
+            $("#apod_title").text(result.title)
         });
     });
 
@@ -110,17 +101,28 @@ $(document).ready(function() {
         $(".modal").addClass("is-active");
     });
 
-    // MODAL BUTTONS: close modal on button click or key press
-    $(".modal_button").on("click", function(e) {
-        $(".modal").removeClass("is-active");
-        display();
-        moveRocket();
-    });
-    $(window).on("keydown", function(e) {
-        if (e.keyCode === 13 || e.keyCode === 27) {
+        // console.log (imageArray.length + " length ");
+        // MODAL BUTTONS: close modal on button click or key press
+        $(".modal_button").on("click", function(e) {
             $(".modal").removeClass("is-active");
-        }
-    });
+            total = correct + incorrect;
+            name = "Tim";  //TODO: temporarily in here until TW fixes the firebase reference
+            // Game over logic
+            if (total === 2) {
+                window.open("gameover.html");
+                endOfGame(correct, incorrect, name);
+            } else {
+                display();
+                moveRocket();
+            }
+
+        });
+        $(window).on("keydown", function(e) {
+            if (e.keyCode === 13 || e.keyCode === 27) {
+                $(".modal").removeClass("is-active");
+            }
+        });
+
 
     function moveRocket (){ //name of the button that will load the next question
         counter2++
@@ -129,10 +131,22 @@ $(document).ready(function() {
         timer = setTimeout(switchImage, 1000)
         }
     };
-
     
     function switchImage () { //switches the rocket image source
         $('#rocket').attr('src', 'assets/images/unpowered.png');
     }
+    
+    function endOfGame (correct, incorrect, name) {
+        var postData = {
+            corret: correct,
+            incorrect: incorrect,
+            name: name
+        };
+        var updates = {};
+        console.log(newPostKey + " key ")
+        updates[newPostKey] = postData;
+        console.log (name + " " + correct + " " + incorrect);
+        return firebase.database().ref().update(updates);
 
+    }
 });
