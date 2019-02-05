@@ -201,6 +201,61 @@ var data = {
     ]
     
 }
+ var wrongImages= [
+        {
+        title: "The Crab Nebula",
+		file: "assets/images/The_Crab_Nebula.png"
+        }	
+		,
+        {
+        title: "Horsehead Nebula",
+		file: "assets/images/The_Horsehead_Nebula.png"
+        }	
+		,
+        {
+        title: "Cosmic Fountain Powered by Giant Black Hole",
+		file: "assets/images/Cosmic_Fountain_Powered_by_Giant
+		_Black_Hole.png"
+        }	
+		,
+        {
+        title: "Wolf-Rayet Star",
+		file: "assets/images/Wolf_Rayet_Star.png
+        }	
+		,
+        {
+        title: "Death of a Star",
+		file: "assets/images/Death_of_a_Star.png"
+		,
+        {
+        title: "A Strange Ring Galaxy",
+		file: "assets/images/A_Strange_Ring_Galaxy.png"
+        }	
+		,
+        {
+        title: "A Spiral Galaxy : NGC 278",
+		file: "assets/images/A_Spiral_Galaxy_NGC_278.png"
+        }	
+		,
+        {
+        title: "International Space Station",
+		file: "assets/images/International_Space_Station.png"
+        }
+		,
+        title: "Blast Wave from a Supernova",
+		file: "assets/images/Blast_Wave_from_a_Supernova.png"
+        }	
+		,
+        {
+        title: "Eagle Nebula",
+		file: "assets/images/Eagle_Nebula.png"
+        },	
+		
+        
+		
+		
+	]
+    
 
 display();
 
