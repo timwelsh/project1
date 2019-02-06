@@ -101,7 +101,7 @@ footer {
     to {background-position:10000px 0;}
 }
  
-.stars, .twinkling, .clouds {
+.stars, .twinkling, .clouds-1, .clouds-2 {
     position:absolute;
     top:0;
     left:0;
@@ -128,7 +128,7 @@ footer {
     animation:move-twink-back 200s linear infinite;
 }
  
-.clouds {
+.clouds-1 {
     background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
     z-index:0;
 
@@ -137,6 +137,17 @@ footer {
     -o-animation:move-clouds-back 200s linear infinite;
     -webkit-animation:move-clouds-back 200s linear infinite;
     animation:move-clouds-back 200s linear infinite;
+}
+
+.clouds-2 {
+    background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+    z-index:0;
+
+    -moz-animation:move-clouds-back 500s linear infinite;
+    -ms-animation:move-clouds-back 500s linear infinite;
+    -o-animation:move-clouds-back 500s linear infinite;
+    -webkit-animation:move-clouds-back 500s linear infinite;
+    animation:move-clouds-back 500s linear infinite;
 }
 
 /* PROGRESS BAR */

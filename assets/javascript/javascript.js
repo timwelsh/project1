@@ -209,7 +209,7 @@ var data = {
 		,
         {
         title: "Horsehead Nebula",
-		file: "assets/images/rocket.png"
+		file: "assets/images/Horse_Head_Nebula.png"
         }	
 		,
         {
@@ -261,7 +261,8 @@ function display () { //function that makes the API calls
     $("#option-1_image").attr("src", "");
     $("#option-2_image").attr("src", "");
     $(".audio").empty()
-    counter = imageArray[Math.floor(Math.random() * imageArray.length)];
+    var variable = Math.floor(Math.random() * imageArray.length)
+    counter = imageArray[variable];
     placement = imagePick[Math.floor(Math.random() * imagePick.length)];
 
     var audioSource = $("<source>").attr("src", data.array[counter].sound); //.css({display: 'block', width: '100%', margin: '0 auto'});
@@ -305,23 +306,29 @@ function display () { //function that makes the API calls
         // console.log(response); 
         var results = response.collection.items[imageNumber].links[0].href;
         var header = data.array[counter].title;
-
+        console.log(counter)
 	 if (placement === 0) {
-		$("#option-1_image").attr("src", results);
+        $("#option-1_image").attr("src", results);
+        $("#image1").attr("src", results);
 		$("#option-1_header").text(header);
 		$("#option-1_header").css("text-align", "center");
 		answer = "option-1_image";
-		$("#option-2_image").attr("src", wrongImages[1].file);
-		$("#option-2_header").text(wrongImages[1].title);
+		$("#option-2_image").attr("src", wrongImages[variable].file);
+		$("#option-2_header").text(wrongImages[variable].title);
 		$("#option-2_header").css("text-align", "center");
     } else {
 		$("#option-2_image").attr("src", results);
 		$("#option-2_header").text(header);
 		$("#option-2_header").css("text-align", "center");
 		answer =  "option-2_image";
-		$("#option-1_image").attr("src", wrongImages[1].file);
-		$("#option-1_header").text(wrongImages[1].title);
+		$("#option-1_image").attr("src", wrongImages[variable].file);
+		$("#option-1_header").text(wrongImages[variable].title);
 		$("#option-1_header").css("text-align", "center");
+    }
+    for (i=0; i < wrongImages.length; i++) {
+        if (i === variable) {
+            wrongImages.splice(i, 1)
+        }
     }
 })
 }

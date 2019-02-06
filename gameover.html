@@ -13,46 +13,35 @@
         <!-- Starry animation -->
         <div class="stars"></div>
         <div class="twinkling"></div>
-        <div class="clouds"></div>
-
+        <div class="clouds-1"></div>
+        <div class="clouds-2"></div>
+        <!-- Header -->
         <section class="hero is-primary is-bold">
             <div class="hero-body">
-                <div class="container">
-                    <p id="title" class="is-uppercase is-size-1">
-                    Space Sounds
-                    </p>
+                <div class="container has-text-centered has-text-white">
+                    <p id="title" class="is-uppercase">Space Sounds</p>
                 </div>
             </div>
         </section>
+        <!-- Message -->
         <section class="section">
-            <div class="container">
-                <h1 class="title has-text-white">Congratulations, <span id="player"></span>!</h1>
-                <h2 class="subtitle has-text-white">
-                You finished the game
-            </h2>
+            <div class="container has-text-centered has-text-white">
+                <h1 class="is-size-1 has-text-white">Congratulations, <span id="player"></span>!</h1>
+                <h2 class="is-size-2 has-text-white">You finished the game</h2>
             </div>
         </section>
- 
-        <!-- Scores -->
+        <!-- Score -->
         <section class="section">
-            <div class="container">
-            <h1 class="title has-text-white">Score</h1>
-            <h2 class="subtitle has-text-white">Correct: </h2><h2 id="correct"></h2>
-            <h2 class="subtitle has-text-white">Incorrect: </h2><h2 id="incorrect"></h2>
-            </div>
-        </section>
 
+            <div class="container has-text-centered">
+            <p class="is-size-1 has-text-white">Score</p>
+            <p class="is-size-2 has-text-white">Correct: <span id="correct"></span></p>
+            <p class="is-size-2 has-text-white">Incorrect: <span id="incorrect"></span></p>
+
+            </div>
+        </section>
         <!-- Buttons -->
         <section class="section columns">
-            <div class="level field is-large column">
-                <p class="control level-item">
-                    <a href="https://www.nasa.gov/multimedia/imagegallery/index.html" target="blank_">
-                        <button id="login-btn" class="button is-primary has-text-centered">
-                        NASA
-                        </button>
-                    </a>
-                </p>
-            </div>
             <div class="level field is-large column">
                 <p class="control level-item">
                     <a href="all.html">
@@ -62,12 +51,32 @@
                     </a>
                 </p>
             </div>
+            <div class="level field is-large column">
+                <p class="control level-item">
+                    <a href="https://www.nasa.gov/multimedia/imagegallery/index.html" target="blank_">
+                        <button id="login-btn" class="button is-primary has-text-centered">
+                        NASA
+                        </button>
+                    </a>
+                </p>
+            </div>
         </section>
+
+        <!-- Footer -->
+
+
+        <div class="container columns is-centered">
+            <div class="column is-one-third notification is-primary">
+                <button class="delete"></button>
+                <p class="is-size-4">You can now use the <strong>Answers</strong> button to review the previous images and sounds. You can also explore more by clicking the <strong>NASA</strong> button!</p>
+            </div>
+        </div>
+
 
         <footer class="footer">
             <div class="content has-text-centered">
                 <p>
-                <strong>Space Sounds</strong> by <a href="">Sherry Carrosco</a>, <a href="https://github.com/ericksont11">Thomas Erickson</a>, <a href="https://github.com/leaf-junkie">Julie Ragsdale</a>, and <a href="https://github.com/timwelsh">Tim Welsh</a>. View the project on 
+                <strong>Space Sounds</strong> by <a href="">Sherry Carrasco</a>, <a href="https://github.com/ericksont11">Thomas Erickson</a>, <a href="https://github.com/leaf-junkie">Julie Ragsdale</a>, and <a href="https://github.com/timwelsh">Tim Welsh</a>. View the project on 
                 <a href="https://github.com/timwelsh/project1">GitHub</a>. Images courtesy of the
                 <a href="">NASA APOD API</a>.
                 </p>
