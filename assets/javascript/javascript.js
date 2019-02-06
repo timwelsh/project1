@@ -310,14 +310,16 @@ function display () { //function that makes the API calls
         $("#option-1_header").text(header);
         $("#option-1_header").css("text-align", "center");
         answer = "option-1_image";
+        $("#option-2_image").attr("src", data.wrongImages[counter].file);
+		$("#option-2_header").text(data.wrongImages[counter].title);
+		$("#option-2_header").css("text-align", "center");
     }
     else {
         $("#option-2_image").attr("src", results);
         $("#option-2_header").text(header);
         $("#option-2_header").css("text-align", "center");
         answer =  "option-2_image";
-    }
-    
+
 	 if (placement === 0) {
 		$("#option-1_image").attr("src", results);
 		$("#option-1_header").text(header);
@@ -334,6 +336,6 @@ function display () { //function that makes the API calls
 		$("#option-1_image").attr("src", wrongImages[1].file);
 		$("#option-1_header").text(wrongImages[1].title);
 		$("#option-1_header").css("text-align", "center");
-   }
+    }
    });
 }
