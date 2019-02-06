@@ -42,11 +42,13 @@ $(document).ready(function() {
         var userChoice = this.id;
         if (userChoice === answer) {
             correct++;
+            $('#correct').text(correct);
             $('.modal-card-head').addClass('has-background-success');
             $('.modal-card-title').text('Correct!').addClass('has-text-white');
         }
         else {
             incorrect++;
+            $('#incorrect').text(incorrect);
             $('.modal-card-head').addClass('has-background-danger');
             $('.modal-card-title').text('Incorrect').addClass('has-text-white');
         }
@@ -61,9 +63,9 @@ $(document).ready(function() {
             $('.modal').removeClass('is-active');
             total = correct + incorrect;
             // Game over logic
-            if (total === 2) {
+            if (total === 8) {
                 window.location = 'gameover.html';
-                // endOfGame(correct, incorrect, name);
+                endOfGame(correct, incorrect);
             } else {
                 display();
                 moveRocket();
@@ -90,17 +92,54 @@ $(document).ready(function() {
     }
     
     $('#login-btn').on('click', function() {
-        var name = $('#name-input').val().trim();
-        var postData = {
-           correct: correct,
-           incorrect: incorrect,
-           name: name
-       };
-       var updates = {};
-    //    console.log(newPostKey + ' key ')
-       updates[newPostKey] = postData;
-    //    console.log (name + ' ' + correct + ' ' + incorrect);
-       return firebase.database().ref().update(updates);
+        var username = $('#name-input').val().trim();
+        localStorage.clear();
+        localStorage.setItem("name", username);
    });  
+
+   function endOfGame (correct, incorrect) {
+        name = localStorage.getItem("name");
+        var postData = {
+            correct: correct,
+            incorrect: incorrect,
+            name: name
+        };
+        var updates = {};
+        updates[newPostKey] = postData;
+        return firebase.database().ref().update(updates);
+   }
+
+   firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        console.log("auth state changed: " + user.uid);
+        userID = user.uid; //when connecting by link, this will be the same user
+        let shortUserID = Math.floor(Math.random() * 1000 + 1000);
+        userName = prompt("Please enter a name to use for sending messages. If you don't choose one, we'll call you by this random number:", shortUserID);
+        if (userName == null || userName.trim() == "") {
+            userName = shortUserID;
+        };
+        // User is signed in.
+        userSignedIn = true;
+        userIdentificationPath = "users/" + userID + "/identification";
+        if (window.location.href.indexOf("?") > 0) {
+            turnURLIntoUserInstancesPath();
+            console.log("user ID after signout: " + userID);
+        } else {
+            if (localStorageUIPath != null) {
+                userInstancesPath = localStorageUIPath;
+            } else {
+                userInstancesPath = userID + "/space-sounds/" + (+new Date());
+            }
+            userMessagesPath = userInstancesPath + "/messages";
+        }
+        if (localStorageLastURLParams != null) {
+            turnURLIntoUserInstancesPath(localStorageLastURLParams);
+        };
+        getLocation();
+        setTimeout(function () {
+            doAddEntry("connected");
+        }, 2000);
+    };
+});
 
 });
