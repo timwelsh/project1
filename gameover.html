@@ -33,22 +33,13 @@
         <section class="section">
             <div class="container has-text-centered">
             <p class="is-size-1 has-text-white">Score</p>
-            <p class="is-size-2 has-text-white">Correct: </p><p id="correct"></p>
-            <p class="is-size-2 has-text-white">Incorrect: </p><p id="incorrect"></p>
+            <p class="is-size-2 has-text-white">Correct: <span id="correct"></span></p>
+            <p class="is-size-2 has-text-white">Incorrect: <span id="incorrect"></span></p>
             </div>
         </section>
 
         <!-- Buttons -->
         <section class="section columns">
-            <div class="level field is-large column">
-                <p class="control level-item">
-                    <a href="https://www.nasa.gov/multimedia/imagegallery/index.html" target="blank_">
-                        <button id="login-btn" class="button is-primary has-text-centered">
-                        NASA
-                        </button>
-                    </a>
-                </p>
-            </div>
             <div class="level field is-large column">
                 <p class="control level-item">
                     <a href="all.html">
@@ -58,7 +49,23 @@
                     </a>
                 </p>
             </div>
+            <div class="level field is-large column">
+                <p class="control level-item">
+                    <a href="https://www.nasa.gov/multimedia/imagegallery/index.html" target="blank_">
+                        <button id="login-btn" class="button is-primary has-text-centered">
+                        NASA
+                        </button>
+                    </a>
+                </p>
+            </div>
         </section>
+
+        <div class="container columns is-centered">
+            <div class="column is-one-third notification is-primary">
+                <button class="delete"></button>
+                <p class="is-size-4">You can now use the <strong>Answers</strong> button to review the previous images and sounds. You can also explore more by clicking the <strong>NASA</strong> button!</p>
+            </div>
+        </div>
 
         <footer class="footer">
             <div class="content has-text-centered">
