@@ -113,6 +113,16 @@ $(document).ready(function() {
     }
 
     // Populate all.html with our 10 images and sounds
-    $('.image-audio-wrapper').append
+    for () {
+
+        // Append AUDIO to AUDIO-WRAPPER
+        $('.audio-wrapper').append('.audio');
+    
+        // Append AUDIO-WRAPPER to IMAGE 
+        $('.image').append('audio-wrapper');
+    
+        // Append IMAGE to IMAGE-AUDIO-WRAPPER
+        $('.image-audio-wrapper').append('.image');
+    }
 });
 
