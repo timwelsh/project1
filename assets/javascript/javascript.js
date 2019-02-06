@@ -214,18 +214,18 @@ var data = {
 		,
         {
         title: "Cosmic Fountain Powered by Giant Black Hole",
-		file: "assets/images/Cosmic_Fountain_Powered_by_Giant
-		_Black_Hole.png"
+		file: "assets/images/Cosmic_Fountain_Powered_by_Giant_Black_Hole.png"
         }	
 		,
         {
         title: "Wolf-Rayet Star",
-		file: "assets/images/Wolf_Rayet_Star.png
+		file: "assets/images/Wolf_Rayet_Star.png"
         }	
 		,
         {
         title: "Death of a Star",
-		file: "assets/images/Death_of_a_Star.png"
+        file: "assets/images/Death_of_a_Star.png"
+        }
 		,
         {
         title: "A Strange Ring Galaxy",
@@ -241,7 +241,8 @@ var data = {
         title: "International Space Station",
 		file: "assets/images/International_Space_Station.png"
         }
-		,
+        ,
+        {
         title: "Blast Wave from a Supernova",
 		file: "assets/images/Blast_Wave_from_a_Supernova.png"
         }	
@@ -249,14 +250,9 @@ var data = {
         {
         title: "Eagle Nebula",
 		file: "assets/images/Eagle_Nebula.png"
-        },	
-		
-        
-		
-		
-	]
+        },		
+]
     
-
 display();
 
 function display () { //function that makes the API calls
