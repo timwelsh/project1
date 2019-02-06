@@ -31,11 +31,6 @@ $(document).ready(function() {
         console.log('Error: ' + errorObject.code);
     });
 
-    $('#login-btn').on('click', function() {
-         var name = $('#name-input').val().trim();
-
-    });  
-
     // When use hovers over an image, create overlay
     $('.image').mouseover(function(hover) {
     });
@@ -65,11 +60,10 @@ $(document).ready(function() {
         $('.modal_button').on('click', function(e) {
             $('.modal').removeClass('is-active');
             total = correct + incorrect;
-            name = 'Tim';  //TODO: temporarily in here until TW fixes the firebase reference
             // Game over logic
             if (total === 2) {
                 window.location = 'gameover.html';
-                endOfGame(correct, incorrect, name);
+                // endOfGame(correct, incorrect, name);
             } else {
                 display();
                 moveRocket();
@@ -95,17 +89,18 @@ $(document).ready(function() {
         $('#rocket').attr('src', 'assets/images/unpowered.png');
     }
     
-    function endOfGame (correct, incorrect, name) {
+    $('#login-btn').on('click', function() {
+        var name = $('#name-input').val().trim();
         var postData = {
-            corret: correct,
-            incorrect: incorrect,
-            name: name
-        };
-        var updates = {};
-        console.log(newPostKey + ' key ')
-        updates[newPostKey] = postData;
-        console.log (name + ' ' + correct + ' ' + incorrect);
-        return firebase.database().ref().update(updates);
+           correct: correct,
+           incorrect: incorrect,
+           name: name
+       };
+       var updates = {};
+    //    console.log(newPostKey + ' key ')
+       updates[newPostKey] = postData;
+    //    console.log (name + ' ' + correct + ' ' + incorrect);
+       return firebase.database().ref().update(updates);
+   });  
 
-    }
 });
