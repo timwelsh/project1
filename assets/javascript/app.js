@@ -40,7 +40,7 @@ $(document).ready(function() {
     $('.image').mouseover(function(hover) {
     });
 
-    var clickCounter;
+    var clickCounter = '';
 
     // When user clicks an image, pull up modal
     $('.image').on('click', function(event) {
@@ -56,11 +56,8 @@ $(document).ready(function() {
             $('.modal-card-title').text('Incorrect').addClass('has-text-white');
         }
         $('.modal').addClass('is-active');
+        $('#question-tracker').html(clickCounter + 1 + '/10');
         clickCounter++
-
-        if (clickCounter > 10) {
-            
-        }
     });
 
         // console.log (imageArray.length + ' length ');
