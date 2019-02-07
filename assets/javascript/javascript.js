@@ -254,6 +254,7 @@ var data = {
 ]
     
 display();
+setTimeout(rocketLand, 6300);
 
 function display () { //function that makes the API calls
     $("#option-1_header").empty();
@@ -306,7 +307,7 @@ function display () { //function that makes the API calls
         console.log(response); 
         var results = response.collection.items[imageNumber].links[0].href;
         var header = data.array[counter].title;
-        console.log(counter)
+        console.log("Image from the array: Number " + counter)
 	 if (placement === 0) {
         $("#option-1_image").attr("src", results);
         $("#image1").attr("src", results);
@@ -330,5 +331,9 @@ function display () { //function that makes the API calls
             wrongImages.splice(i, 1)
         }
     }
-    })
+})
+}
+
+function rocketLand () { //switches the rocket image source
+    $('#gameover-rocket').attr('src', 'assets/images/unpowered.png');
 }
