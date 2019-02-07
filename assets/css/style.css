@@ -290,7 +290,7 @@ footer {
     position: absolute;
     height: auto;
     width: 20vw;
-    margin-top: 50vh
+    margin-top: 30vw
 }
 
 .gameover-rocket {
@@ -336,17 +336,18 @@ animation: animation-land 3000ms linear both;
 animation-delay: 3500ms
 }
 @keyframes animation-land { 
-0% { transform: translatey(0vh) }
-9% {  transform: translatey(4vh)}
-18% { transform: translatey(8vh) }
-27% { transform: translatey(12vh) }
-36% { transform: translatey(16vh) }
-45% { transform: translatey(20vh)}
-55% { transform: translatey(25vh) }
-70% {  transform: translatey(30vh) }
-85% { transform: translatey(35vh)}
-100% { transform: translatey(40vh) } 
+0% { transform: translatey(0vw) }
+9% {  transform: translatey(2.5vw)}
+18% { transform: translatey(5vw) }
+27% { transform: translatey(7.5vw) }
+36% { transform: translatey(10vw) }
+45% { transform: translatey(12.5vw)}
+55% { transform: translatey(15vw) }
+70% {  transform: translatey(18.5vw) }
+85% { transform: translatey(22vw)}
+100% { transform: translatey(25vw) } 
 }
+
 
 .animation-twist{
 animation: animation-twist 2000ms linear both;
