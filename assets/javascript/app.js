@@ -99,6 +99,14 @@ $(document).ready(function() {
         localStorage.setItem("name", username);
    });  
 
+   $('#login').on('click', function(event) {
+        event.preventDefault();
+        var age = $('#age-input').val().trim();
+        if (age > 6 && age < 101) {
+           window.location.href = 'game.html'
+        }
+   });  
+
    function endOfGame (correct, incorrect) {
         name = localStorage.getItem("name");
         var postData = {
