@@ -52,26 +52,53 @@
             <br>
         </section>
         <!-- Images -->
-        <section class="section has-background-black">
-            <div class="container columns">
-                <!-- First answer option will be populated here -->
-                <div id="option-1" class="column is-half">
-                    <div class="image-wrapper">
-                        <h1 id="option-1_header" class="title has-text-white has-text-centered"></h1>
-                        <img id="option-1_image" class="image grayscale">
-                        <div class="overlay"></div>
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-12">
+                <div class="tile">
+                    <!-- First answer option will be populated here -->
+                    <div id="option-1" class="tile is-parent">
+                        <article class="tile is-child notification is-black">
+                            <p id="option-1_header" class="title has-text-white has-text-centered"></p>
+                            <figure class="image">
+                                <img id="option-1_image" class="image grayscale">
+                                <div class="overlay"></div>
+                            </figure>
+                        </article>
                     </div>
-                </div>
-                <!-- Second answer option will be populated here -->
-                <div id="option-2" class="column is-half">
-                    <div class="image-wrapper">
-                        <h1 id="option-2_header" class="title has-text-white has-text-centered"></h1>
-                        <img id="option-2_image" class="image grayscale">
-                        <div class="overlay"></div>
+                    <!-- Second answer option will be populated here -->
+                    <div id="option-2" class="tile is-parent">
+                        <article class="tile is-child notification is-black">
+                            <p id="option-1_header" class="title has-text-white has-text-centered"></p>
+                            <figure class="image">
+                                <img id="option-2_image" class="image grayscale">
+                                <div class="overlay"></div>
+                            </figure>
+                        </article>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- <section class="section has-background-black"> -->
+            <!-- <div class="container columns"> -->
+                <!-- First answer option will be populated here -->
+                <!-- <div id="option-1" class="column is-half"> -->
+                    <!-- <div class="image-wrapper"> -->
+                        <!-- <h1 id="option-1_header" class="title has-text-white has-text-centered"></h1> -->
+                        <!-- <img id="option-1_image" class="image grayscale"> -->
+                        <!-- <div class="overlay"></div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+                <!-- Second answer option will be populated here -->
+                <!-- <div id="option-2" class="column is-half"> -->
+                    <!-- <div class="image-wrapper"> -->
+                        <!-- <h1 id="option-2_header" class="title has-text-white has-text-centered"></h1> -->
+                        <!-- <img id="option-2_image" class="image grayscale"> -->
+                        <!-- <div class="overlay"></div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </section> -->
         <!-- Modal: pops up when user answers incorrectly -->
         <div class="modal">
             <div class="modal-background"></div>
