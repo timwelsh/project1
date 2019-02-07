@@ -306,7 +306,7 @@ function display () { //function that makes the API calls
         // console.log(response); 
         var results = response.collection.items[imageNumber].links[0].href;
         var header = data.array[counter].title;
-        console.log(counter)
+        console.log("Image from the array: Number " + counter)
 	 if (placement === 0) {
         $("#option-1_image").attr("src", results);
         $("#image1").attr("src", results);
