@@ -1,6 +1,6 @@
 body {
     background: #000;
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
 }
@@ -24,10 +24,6 @@ body {
     font-size: 100px;
 }
 
-.image-wrapper {
-    width: 100%;
-}
-
 .audio-wrapper {
     text-align: center;
     width: 100%;
@@ -44,10 +40,10 @@ body {
 
 .grayscale{ 
     border: 1px solid black;
-      filter: grayscale(100%);
-      -webkit-filter: grayscale(100%);  /* For Webkit browsers */
-      filter: gray;  /* For IE 6 - 9 */
-      -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);  /* For Webkit browsers */
+    filter: gray;  /* For IE 6 - 9 */
+    -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
   }
   
 .grayscale:hover { 
