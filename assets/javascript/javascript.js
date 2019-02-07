@@ -16,7 +16,7 @@ var data = {
         },
         {
         arrayPosition : "1",
-        title: "Sounds of Saturn: Enceladus Moon Hiss",
+        title: "Saturn: Enceladus Moon",
         wiki: "Enceladus",
         nasa: "Enceladus",
         imageNumber: "1",
@@ -24,7 +24,7 @@ var data = {
         },
         {
         arrayPosition : "2",
-        title: "Voyager Plasma Sounds",
+        title: "Voyager Plasma",
         wiki: "Plasma_(physics)",
         nasa: "Plasma",
         imageNumber: "44",
@@ -48,7 +48,7 @@ var data = {
         },
         {
         arrayPosition : "5",
-        title: "Beware of Jupiter’s Largest Moon Ganymede",
+        title: "Jupiter’s Largest Moon Ganymede",
         wiki: "Ganymede_(moon)",
         nasa: "Ganymede",
         imageNumber: "8",
@@ -80,7 +80,7 @@ var data = {
         },  
         {
         arrayPosition : "9",
-        title: "Voyager: Lightning on Jupiter",
+        title: "Lightning on Jupiter",
         wiki: "Atmosphere_of_Jupiter",
         nasa: "Jupiter Lightning",
         imageNumber: "2",
@@ -104,7 +104,7 @@ var data = {
         },  
         {
         arrayPosition : "12",
-        title: "Cassini: Saturn Radio Emissions #2",
+        title: "Cassini: Saturn",
         wiki: "Cassini%E2%80%93Huygens",
         nasa: "Cassini",
         imageNumber: "35",
@@ -136,7 +136,7 @@ var data = {
         }, 
         {
         arrayPosition : "16",
-        title: "Plasmaspheric Hiss",
+        title: "Plasmaspheric",
         wiki: "Polar_(satellite)",
         nasa: "Plasma",
         imageNumber: "27",
@@ -160,7 +160,7 @@ var data = {
         }, 
         {
         arrayPosition : "19",
-        title: "Jupiter Sounds 2001",
+        title: "Jupiter 2001",
         wiki: "Jupiter",
         nasa: "Jupiter",
         imageNumber: "8",
@@ -283,16 +283,16 @@ function display () { //function that makes the API calls
 
     //TODO: commented WIKI API out for testing b/c it was timing out and was slow
     //WIKI API CALL START
-    // var xhr = new XMLHttpRequest();
-    // var url = "https://en.wikipedia.org/api/rest_v1/page/summary/"+ wiki;
+    var xhr = new XMLHttpRequest();
+    var url = "https://en.wikipedia.org/api/rest_v1/page/summary/"+ wiki;
 
-    // xhr.open('GET', url, true);
-    // xhr.onload = function() {
-    //     var data = JSON.parse(this.response);
-    //     var wikiInfo= data.extract;
-    //     $("#modal-content").html(wikiInfo); // This will populate the modal text
-    // }
-    // xhr.send();
+    xhr.open('GET', url, true);
+    xhr.onload = function() {
+        var data = JSON.parse(this.response);
+        var wikiInfo= data.extract;
+        $("#modal-content").html(wikiInfo); // This will populate the modal text
+    }
+    xhr.send();
 
 
     // NASA API CALL START
@@ -303,7 +303,7 @@ function display () { //function that makes the API calls
         method: "GET"
     })
     .then(function(response) {
-        // console.log(response); 
+        console.log(response); 
         var results = response.collection.items[imageNumber].links[0].href;
         var header = data.array[counter].title;
         console.log(counter)
@@ -330,5 +330,5 @@ function display () { //function that makes the API calls
             wrongImages.splice(i, 1)
         }
     }
-})
+    })
 }
