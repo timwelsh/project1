@@ -39,6 +39,7 @@ $(document).ready(function() {
 
     // When user clicks an image, pull up modal
     $('.image').on('click', function(event) {
+        event.stopImmediatePropagation();
         var userChoice = this.id;
         if (userChoice === answer) {
             correct++;
