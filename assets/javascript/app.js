@@ -65,7 +65,7 @@ $(document).ready(function() {
         $('.modal').removeClass('is-active');
         total = correct + incorrect;
         // Game over logic
-        if (total === 8) {
+        if (total === 10) {
             window.location = 'gameover.html';
             endOfGame(correct, incorrect);
         } else {
