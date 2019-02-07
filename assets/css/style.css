@@ -100,8 +100,28 @@ footer {
     from {background-position: 0;}
     to {background-position:10000px 0;}
 }
- 
-.stars, .twinkling, .clouds-1, .clouds-2 {
+
+/* @keyframes spin-galaxy {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes spin-galaxy {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin-galaxy {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@-ms-keyframes spin-galaxy {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+} */
+
+.stars, .twinkling, .cloud-1, .cloud-2, .galaxy {
     position:absolute;
     top:0;
     left:0;
@@ -111,7 +131,15 @@ footer {
     height:100%;
     display:block;
 }
- 
+
+.cloud-1 {
+    top: 10%;
+}
+
+.cloud-2 {
+    top: 65%;
+}
+
 .stars {
     background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
     z-index:0;
@@ -127,28 +155,37 @@ footer {
     -webkit-animation:move-twink-back 200s linear infinite;
     animation:move-twink-back 200s linear infinite;
 }
- 
-.clouds-1 {
-    background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+
+/* .cloud-1 {
     z-index:0;
+    size: 200px;
+    background: transparent url(http://www.aljanh.net/data/archive/img/1821777152.png) no-repeat;
+    -moz-animation:move-clouds-back 500s linear infinite;
+    -ms-animation:move-clouds-back 500s linear infinite;
+    -o-animation:move-clouds-back 500s linear infinite;
+    -webkit-animation:move-clouds-back 500s linear infinite;
+    animation:move-clouds-back 500s linear infinite;
+} */
 
-    -moz-animation:move-clouds-back 200s linear infinite;
-    -ms-animation:move-clouds-back 200s linear infinite;
-    -o-animation:move-clouds-back 200s linear infinite;
-    -webkit-animation:move-clouds-back 200s linear infinite;
-    animation:move-clouds-back 200s linear infinite;
-}
-
-.clouds-2 {
-    background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+.cloud-2 {
     z-index:0;
-
+    background: transparent url(https://cdn155.picsart.com/225527332022202.png?r1024x1024) no-repeat;
     -moz-animation:move-clouds-back 500s linear infinite;
     -ms-animation:move-clouds-back 500s linear infinite;
     -o-animation:move-clouds-back 500s linear infinite;
     -webkit-animation:move-clouds-back 500s linear infinite;
     animation:move-clouds-back 500s linear infinite;
 }
+
+/* .galaxy {
+    z-index:0;
+    background: transparent url(http://www.hansenpartnership.com/collab2014/spiral-galaxy.png) no-repeat;
+    -moz-animation:spin-galaxy 300s linear infinite;
+    -ms-animation:spin-galaxy 300s linear infinite;
+    -o-animation:spin-galaxy 300s linear infinite;
+    -webkit-animation:spin-galaxy 300s linear infinite;
+    animation:spin-galaxy 300s linear infinite;
+} */
 
 /* PROGRESS BAR */
 #rocket {
