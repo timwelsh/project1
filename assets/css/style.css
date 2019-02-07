@@ -1,3 +1,10 @@
+body {
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 #login {
     width: 20rem;
     position: relative;
@@ -12,10 +19,6 @@
     font-size: 24px;
     font-weight: bold;
 }
-
-/* #landing-page_image {
-    max-width: 90%;
-} */
 
 #title {
     font-size: 100px;
@@ -57,6 +60,9 @@
 }
 
 footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     z-index: 100;
 }
 
