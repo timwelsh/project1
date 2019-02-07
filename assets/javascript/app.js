@@ -44,12 +44,14 @@ $(document).ready(function() {
             correct++;
             $('#correct').text(correct);
             $('.modal-card-head').addClass('has-background-success');
+            $('.modal-card-head').removeClass('has-background-danger');
             $('.modal-card-title').text('Correct!').addClass('has-text-white');
         }
         else {
             incorrect++;
             $('#incorrect').text(incorrect);
             $('.modal-card-head').addClass('has-background-danger');
+            $('.modal-card-head').removeClass('has-background-success');
             $('.modal-card-title').text('Incorrect').addClass('has-text-white');
         }
         $('.modal').addClass('is-active');
