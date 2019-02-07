@@ -56,7 +56,7 @@ $(document).ready(function() {
         }
         clickCounter++
         $('.modal').addClass('is-active');
-        $('#question-tracker').html(clickCounter + 1 + '/10');
+        $('#question-tracker').html(clickCounter + '/10');
     });
 
     // MODAL BUTTONS: close modal on button click or key press
