@@ -5,6 +5,16 @@ body {
     height: 100%;
 }
 
+#option-2_image {
+    width: 100%;
+    border: 10px hsl(171, 100%, 41%)solid;
+    margin-bottom: 20vh;
+}
+#option-1_image {
+    width: 100%;
+    border: 10px hsl(171, 100%, 41%) solid;
+    margin-bottom: 20vh;
+}
 #login {
     width: 20rem;
     position: relative;
@@ -501,4 +511,3 @@ animation: animation9 6000ms linear both;
 83.98% { transform: translatex(89.42vw)}
 100% { transform: translatex(89.5vw)  } 
 }
-
