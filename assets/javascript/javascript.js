@@ -254,6 +254,7 @@ var data = {
 ]
     
 display();
+setTimeout(rocketLand, 6300);
 
 function display () { //function that makes the API calls
     $("#option-1_header").empty();
@@ -331,4 +332,8 @@ function display () { //function that makes the API calls
         }
     }
 })
+}
+
+function rocketLand () { //switches the rocket image source
+    $('#gameover-rocket').attr('src', 'assets/images/unpowered.png');
 }
