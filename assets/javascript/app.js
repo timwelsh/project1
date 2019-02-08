@@ -72,6 +72,11 @@ $(document).ready(function() {
     
     // MODAL BUTTONS: close modal on button click or key press
     $('.modal_button').on('click', function(e) {
+        total = correct + incorrect;
+        if (total === 10) {
+            window.location = 'gameover.html';
+            endOfGame(correct, incorrect);
+        } 
         planet = planetArray[counter2]
         console.log(xwing)
         console.log(pelican)
@@ -93,12 +98,7 @@ $(document).ready(function() {
             $('#ship').attr('src', shipArray[2]);
         }
         $('.modal1').removeClass('is-active');
-        total = correct + incorrect;
         // Game over logic
-        if (total === 10) {
-            window.location = 'gameover.html';
-            endOfGame(correct, incorrect);
-        } 
         if ((correct === 2 && xwing === false)|| (correct === 4 && pelican === false) || (correct === 7 && enterprise === false)) {
             $('.modal2').addClass('is-active');
         }
@@ -141,21 +141,7 @@ $(document).ready(function() {
         }
         $('.modal2').removeClass('is-active');
         checkStatus();
-        console.log(xwing)
     })
-
-    $('.modal_button2').on('click', function(e) {
-        $('.modal2').removeClass('is-active');
-    })
-
-    // TODO: need the keypress to display next set of images OR remove this code 
-    $(window).on('keydown', function(e) {
-        if (e.keyCode === 13 || e.keyCode === 27) {
-            $('.modal1').removeClass('is-active');
-            $('.modal2').removeClass('is-active');
-            console.log(correct)
-        }
-    });
 
     //Function that moves the rocket on the progress bar
     function moveRocket (){ 
