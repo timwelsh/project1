@@ -3,6 +3,7 @@
 
 $(document).ready(function() {
     var planetArray = ['#sun', '#mercury', '#venus', '#earth', '#mars', '#jupiter', '#saturn', '#uranus', '#neptune', '#kuiper']
+    var shipArray = ['assets/images/x-wing.png', 'assets/images/pelican.png', 'assets/images/enterprise.png']
 
     // Initialize Firebase
     var config = {
@@ -23,7 +24,13 @@ $(document).ready(function() {
     var incorrect = 0;
     var newPostKey = firebase.database().ref().child('posts').push().key;
     var blowUp;
-
+    var x = 0;
+    var upgrade = false
+    var xwing = false;
+    var enterprise = false;
+    var pelican = false;
+    var clickCounter = '';
+    
     database.ref().on('child_added', function(snapshot) {
         $('#player').text(snapshot.val().name).addClass('has-text-white');
         $('#correct').text(snapshot.val().correct).addClass('has-text-white');
@@ -36,8 +43,6 @@ $(document).ready(function() {
     // When use hovers over an image, create overlay
     $('.image').mouseover(function(hover) {
     });
-
-    var clickCounter = '';
 
     // When user clicks an image, pull up modal
     $('.image').on('click', function(event) {
@@ -60,54 +65,123 @@ $(document).ready(function() {
             blowUp=true;
         }
         clickCounter++
-        $('.modal').addClass('is-active');
+        $('.modal1').addClass('is-active');
         $('#question-tracker').html(clickCounter + '/10');
     });
 
+    
     // MODAL BUTTONS: close modal on button click or key press
     $('.modal_button').on('click', function(e) {
-        if (blowUp === true){
-            planet = planetArray[counter2]
-            $(planet).addClass('shake')
-            explosionAnimation()
+        planet = planetArray[counter2]
+        console.log(xwing)
+        console.log(pelican)
+        console.log(enterprise)
+        if (correct !== 2 && correct !== 4 && correct !== 7 || (xwing === true && correct === 2) || (pelican === true && correct === 4) || (enterprise === true && correct === 7)) {
+            checkStatus();
         }
-        $('.modal').removeClass('is-active');
+        if (correct === 2 && xwing === false) {
+            $('#ship-upgrade').css('visibility', 'visible');
+        }
+        if (correct === 4  && pelican === false) {
+            $('#ship-upgrade').css('visibility', 'visible');
+            $('#ship-text').html('You have collected enought data to upgrade to a Halo Pelican!');
+            $('#ship').attr('src', shipArray[1]);
+        }
+        if (correct === 7 && enterprise === false) {
+            $('#ship-upgrade').css('visibility', 'visible');
+            $('#ship-text').html('You have collected enought data to upgrade to the Star Trek Enterprise!');
+            $('#ship').attr('src', shipArray[2]);
+        }
+        $('.modal1').removeClass('is-active');
         total = correct + incorrect;
         // Game over logic
         if (total === 10) {
             window.location = 'gameover.html';
             endOfGame(correct, incorrect);
-        } else {
-            display();
-            moveRocket();
+        } 
+        if ((correct === 2 && xwing === false)|| (correct === 4 && pelican === false) || (correct === 7 && enterprise === false)) {
+            $('.modal2').addClass('is-active');
         }
     });
 
-        // TODO: need the keypress to display next set of images
-        $(window).on('keydown', function(e) {
-            if (e.keyCode === 13 || e.keyCode === 27) {
-                $('.modal').removeClass('is-active');
-            }
-        });
+    //Changes the users ship to the ship displayed
+    $('.modal_upgrade').on('click', function(e) {
+        if (correct === 2 ) {
+            $('#rocket').attr('src', shipArray[0]);
+            $('#rocket').css('margin-top', '1.5%');
+            xwing = true;
+        }
+        if (correct === 4 ) {
+            $('#rocket').attr('src', shipArray[1]);
+            $('#rocket').css('margin-top', '1%');
+            pelican = true;
+        }
+        if (correct === 7 ) {
+            $('#rocket').attr('src', shipArray[2]);
+            $('#rocket').css('margin-top', '1.5%');
+            enterprise = true;
+        }
+        upgrade = true;
+        $('.modal2').removeClass('is-active');
+        checkStatus();
+    })
 
-    function moveRocket (){ //name of the button that will load the next question
+    //Changes the appropriate variables in the user doesn't want to change ships
+    $('.modal_reject').on('click', function(e) {
+        e.preventDefault()
+        console.log(correct)
+        if (correct === 2 ) {
+            xwing = true;
+        }
+        if (correct === 4 ) {
+            pelican = true;
+        }
+        if (correct === 7 ) {
+            enterprise = true;
+        }
+        $('.modal2').removeClass('is-active');
+        checkStatus();
+        console.log(xwing)
+    })
+
+    $('.modal_button2').on('click', function(e) {
+        $('.modal2').removeClass('is-active');
+    })
+
+    // TODO: need the keypress to display next set of images OR remove this code 
+    $(window).on('keydown', function(e) {
+        if (e.keyCode === 13 || e.keyCode === 27) {
+            $('.modal1').removeClass('is-active');
+            $('.modal2').removeClass('is-active');
+            console.log(correct)
+        }
+    });
+
+    //Function that moves the rocket on the progress bar
+    function moveRocket (){ 
         counter2++
         if (counter2 < 14){
-        $('#rocket').attr('src', 'assets/images/rocket.png').addClass('animation'+counter2).removeClass('animation'+(counter2-1));
-        timer = setTimeout(switchImage, 1000)
+        $('#rocket').addClass('animation'+counter2).removeClass('animation'+(counter2-1));
+        if (upgrade === false) {
+            $('#rocket').attr('src', 'assets/images/rocket.png')
+                timer = setTimeout(switchImage, 1000)
+            }
         }
     };
     
-    function switchImage () { //switches the rocket image source
+    //switches the rocket image 
+    function switchImage () { 
         $('#rocket').attr('src', 'assets/images/unpowered.png');
     }
     
+    //Sets the name entered by the user into Local Storage
     $('#login-btn').on('click', function() {
         var username = $('#name-input').val().trim();
         localStorage.clear();
         localStorage.setItem("name", username);
    });  
 
+   //Checks to see if the user is the appropriate age and if they have entered a username
    $('#login').on('click', function(event) {
         event.preventDefault();
         var age = $('#age-input').val().trim();
@@ -117,6 +191,7 @@ $(document).ready(function() {
         }
    });  
 
+   //Pushes the data from the game to Firebase
    function endOfGame (correct, incorrect) {
         name = localStorage.getItem("name");
         var postData = {
@@ -162,8 +237,8 @@ $(document).ready(function() {
         };
     });
 
+    //Makes the planet the user was on explode if they get the question wrong
     function explosionAnimation () {
-        planet = planetArray[counter2]
         setTimeout(function () {
             $(planet).attr('src', 'assets/images/exploding.png')
         }, 1000)
@@ -186,6 +261,48 @@ $(document).ready(function() {
         setTimeout(function () {
             $(planet).attr('src', '')
         }, 1450)
+    }
+
+    //Gives the user positive feedback if they get a question correct
+    function dataCollection () {
+        $('#data-div').addClass('animation-data');
+        $('#data-div').css('visibility', 'visible');
+        $('#data-div').css('margin-left', x+'vw');
+        setTimeout(function() {
+            $('#data-div').css('visibility', 'hidden');
+            $('#data-div').removeClass('animation-data');
+        },1900)
+    }
+
+    //Checks to see if the planet should blow up, if the rocket should move, and what should be displayed
+    function checkStatus () {
+        if (blowUp === true){
+            $(planet).addClass('shake')
+            explosionAnimation()
+            display();
+            moveRocket();
+        }
+        else {
+           dataCollection()
+           display();
+           moveRocket();
+        }
+        x = x + 10;
+        if (x === 48 || x=== 60 || x === 72){
+            x = x + 2;
+        }
+        else if (x === 20 || x === 39) {
+            x = x - 1
+        }
+        if (correct === 2 ) {
+            xwing === true;
+        }
+        if (correct === 4 ) {
+            pelican === true;
+        }
+        if (correct === 7 ) {
+            enterprise === true;
+        }
     }
 
 });

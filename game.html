@@ -22,6 +22,11 @@
                 </div>
             </div>
         </section>
+        <!-- Data Pop-up-->
+        <div id="data-div">
+            <img src="assets/images/data.jpg" id="data">
+            <p>+1</p>
+        </div>
         <!-- Progress Bar -->
         <section class="progress-bar is-fullhd">
             <img src="assets/images/unpowered.png" id="rocket">
@@ -79,7 +84,7 @@
             </div>
         </div>
         <!-- Modal: pops up when user answers incorrectly -->
-        <div class="modal">
+        <div class="modal modal1">
             <div class="modal-background"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
@@ -95,6 +100,23 @@
                     <div class="column has-text-right">
                         <p id="question-tracker"></p>
                     </div>
+                </footer>
+            </div>
+        </div>
+        <div class="modal modal2">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title"></p>
+                    <button class="delete modal_reject" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body is-size-5">
+                        <img src="assets/images/x-wing.png" id="ship">
+                        <p id="ship-text">You've collected enough data to upgrade to a Star Wars X-Wing!</p>
+                </section>
+                <footer class="columns modal-card-foot">
+                    <button class="button has-background-grey-lighter modal_upgrade">Upgrade!</button>
+                    <button class="button has-background-grey-lighter modal_reject">Keep my ship!</button>
                 </footer>
             </div>
         </div>

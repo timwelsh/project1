@@ -9,16 +9,35 @@ body {
 src: url('../../STJEDISE.TTF') format('truetype');
   }
 
-#option-2_image {
-    width: 100%;
-    border: 10px hsl(171, 100%, 41%)solid;
-    margin-bottom: 20vh;
-}
 #option-1_image {
     width: 100%;
     border: 10px hsl(171, 100%, 41%) solid;
     margin-bottom: 20vh;
 }
+
+#option-2_image {
+    width: 100%;
+    border: 10px hsl(171, 100%, 41%)solid;
+    margin-bottom: 20vh;
+}
+
+#ship {
+    width: 50%;
+    margin-left: 25%;
+}
+
+#data-div {
+    position: absolute;
+    height: auto;
+    width: 5vw;
+    z-index: 11;
+    color: white;
+    font-weight: bold;
+    margin-left: .5vw ;
+    text-align: center;
+    visibility: hidden;
+}
+
 #login {
     width: 20rem;
     position: relative;
@@ -412,6 +431,23 @@ animation-delay: 3000ms
 }
 
 /* All animations below generated with Bounce.js. Edit at https://goo.gl/HQ2JuX */
+
+.animation-data {
+animation: animation-data 2300ms linear both;
+
+}
+@keyframes animation-data { 
+0% { transform: translatey(0vw) }
+9% {  transform: translatey(-.4vw)}
+18% { transform: translatey(-.8vw) }
+27% { transform: translatey(-1.2vw) }
+36% { transform: translatey(-.1.6vw) }
+45% { transform: translatey(-2vw)}
+55% { transform: translatey(-2.4vw) }
+70% {  transform: translatey(-2.8vw) }
+85% { transform: translatey(-3.2vw)}
+100% { transform: translatey(0vw) } 
+}
 
 .animation1 {
 animation: animation 6000ms linear both;
