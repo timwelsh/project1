@@ -279,7 +279,7 @@ src: url('../../STJEDISE.TTF') format('truetype');
 .progress-bar {
     width: 100%;
     height: 5vw;
-    background-color: blue;
+    background-color: black
 }
 
 /* Animations for Gameover.html */
