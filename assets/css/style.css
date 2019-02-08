@@ -4,6 +4,11 @@ body {
     background: cover;
 }
 
+@font-face {
+    font-family: STJEDISE;
+src: url('../../STJEDISE.TTF') format('truetype');
+  }
+
 #option-2_image {
     width: 100%;
     border: 10px hsl(171, 100%, 41%)solid;
@@ -30,7 +35,9 @@ body {
 }
 
 #title {
+    font-family: STJEDISE;
     font-size: 100px;
+    letter-spacing: 4px;
 }
 
 .audio-wrapper {
