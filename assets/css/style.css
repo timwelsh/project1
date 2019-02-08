@@ -5,6 +5,9 @@ body {
     height: 100%;
 }
 
+.hero-body {
+    padding: 0 1.5rem;
+}
 #option-2_image {
     width: 100%;
     border: 10px hsl(171, 100%, 41%)solid;
@@ -60,7 +63,7 @@ body {
       filter: grayscale(0%);
       -webkit-filter: grayscale(0%);
       filter: none;
-      /* My cursor hover over rocket ship needs help */
+      /*TODO: My cursor hover over rocket ship needs help */
       /* cursor: url(../images/rocket-burn.png), auto; */
       cursor: pointer;
 }
@@ -136,7 +139,7 @@ body {
     100% {transform: rotate(360deg);}
 } */
 
-.stars, .twinkling, .cloud-1, .cloud-2, .galaxy {
+.stars, .twinkling {
     position:absolute;
     top:0;
     left:0;
@@ -147,14 +150,6 @@ body {
     display:block;
 }
 
-.cloud-1 {
-    top: 10%;
-}
-
-.cloud-2 {
-    top: 65%;
-}
-
 .stars {
     background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
     z-index:0;
@@ -163,7 +158,6 @@ body {
 .twinkling {
     background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
     z-index:0;
-
     -moz-animation:move-twink-back 200s linear infinite;
     -ms-animation:move-twink-back 200s linear infinite;
     -o-animation:move-twink-back 200s linear infinite;
@@ -171,26 +165,15 @@ body {
     animation:move-twink-back 200s linear infinite;
 }
 
-/* .cloud-1 {
+/* .galaxy {
     z-index:0;
-    size: 200px;
-    background: transparent url(http://www.aljanh.net/data/archive/img/1821777152.png) no-repeat;
+    background: transparent url(/assets/images/galaxy.png) no-repeat;
     -moz-animation:move-clouds-back 500s linear infinite;
     -ms-animation:move-clouds-back 500s linear infinite;
     -o-animation:move-clouds-back 500s linear infinite;
     -webkit-animation:move-clouds-back 500s linear infinite;
     animation:move-clouds-back 500s linear infinite;
 } */
-
-.cloud-2 {
-    z-index:0;
-    background: transparent url(https://cdn155.picsart.com/225527332022202.png?r1024x1024) no-repeat;
-    -moz-animation:move-clouds-back 500s linear infinite;
-    -ms-animation:move-clouds-back 500s linear infinite;
-    -o-animation:move-clouds-back 500s linear infinite;
-    -webkit-animation:move-clouds-back 500s linear infinite;
-    animation:move-clouds-back 500s linear infinite;
-}
 
 /* .galaxy {
     z-index:0;
