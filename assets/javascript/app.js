@@ -2,6 +2,8 @@
 // example: https://api.nasa.gov/planetary/apod?api_key=E0dwINrsYxiDcYZN3iRUIXooCzBUT7NBn90dq7N0
 
 $(document).ready(function() {
+    var planetArray = ['#sun', '#mercury', '#venus', '#earth', '#mars', '#jupiter', '#saturn', '#uranus', '#neptune', '#kuiper']
+
     // Initialize Firebase
     var config = {
         apiKey: 'AIzaSyC2u_ttl0dFV88Dyux2lNnGa-cWwFj4nVk',
@@ -20,6 +22,7 @@ $(document).ready(function() {
     var correct = 0;
     var incorrect = 0;
     var newPostKey = firebase.database().ref().child('posts').push().key;
+    var blowUp;
 
     database.ref().on('child_added', function(snapshot) {
         $('#player').text(snapshot.val().name).addClass('has-text-white');
@@ -46,6 +49,7 @@ $(document).ready(function() {
             $('.modal-card-head').addClass('has-background-success');
             $('.modal-card-head').removeClass('has-background-danger');
             $('.modal-card-title').text('Correct!').addClass('has-text-white');
+            blowUp = false;
         }
         else {
             incorrect++;
@@ -53,6 +57,7 @@ $(document).ready(function() {
             $('.modal-card-head').addClass('has-background-danger');
             $('.modal-card-head').removeClass('has-background-success');
             $('.modal-card-title').text('Incorrect').addClass('has-text-white');
+            blowUp=true;
         }
         clickCounter++
         $('.modal').addClass('is-active');
@@ -61,6 +66,11 @@ $(document).ready(function() {
 
     // MODAL BUTTONS: close modal on button click or key press
     $('.modal_button').on('click', function(e) {
+        if (blowUp === true){
+            planet = planetArray[counter2]
+            $(planet).addClass('shake')
+            explosionAnimation()
+        }
         $('.modal').removeClass('is-active');
         total = correct + incorrect;
         // Game over logic
@@ -151,5 +161,31 @@ $(document).ready(function() {
             }, 2000);
         };
     });
+
+    function explosionAnimation () {
+        planet = planetArray[counter2]
+        setTimeout(function () {
+            $(planet).attr('src', 'assets/images/exploding.png')
+        }, 1000)
+        setTimeout(function () {
+            $(planet).attr('src', 'assets/images/exploding-one.png')
+        }, 1075)
+        setTimeout(function () {
+            $(planet).attr('src', 'assets/images/exploding-two.png')
+        }, 1150)
+        setTimeout(function () {
+            $(planet).attr('src', 'assets/images/exploding-three.png')
+        }, 1225)
+        setTimeout(function () {
+            $(planet).attr('src', 'assets/images/exploding-four.png')
+        }, 1300)
+        setTimeout(function () {
+            $(planet).css('margin-top', '1.85%')
+            $(planet).attr('src', 'assets/images/exploding-five.png')
+        }, 1375)
+        setTimeout(function () {
+            $(planet).attr('src', '')
+        }, 1450)
+    }
 
 });
