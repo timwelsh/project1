@@ -72,12 +72,13 @@ src: url('../../STJEDISE.TTF') format('truetype');
 }
 
 .page-footer {
-    background: #f5f5f5;
-    position: relative;
-    padding: 15px;
-    height: 100px;
+    background: #000;
+    color: #fff;
+    position: fixed;
     width: 100%;
     bottom: 0;
+    padding: 15px;
+    height: 100px;
 }
 #score {
     z-index: 10;
@@ -131,26 +132,6 @@ src: url('../../STJEDISE.TTF') format('truetype');
     to {background-position:10000px 0;}
 }
 
-/* @keyframes spin-galaxy {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-}
-
-@-webkit-keyframes spin-galaxy {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-}
-
-@-moz-keyframes spin-galaxy {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-}
-
-@-ms-keyframes spin-galaxy {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-} */
-
 .stars, .twinkling {
     position:absolute;
     top:0;
@@ -180,26 +161,6 @@ src: url('../../STJEDISE.TTF') format('truetype');
     -webkit-animation:move-twink-back 200s linear infinite;
     animation:move-twink-back 200s linear infinite;
 }
-
-/* .galaxy {
-    z-index:0;
-    background: transparent url(/assets/images/galaxy.png) no-repeat;
-    -moz-animation:move-clouds-back 500s linear infinite;
-    -ms-animation:move-clouds-back 500s linear infinite;
-    -o-animation:move-clouds-back 500s linear infinite;
-    -webkit-animation:move-clouds-back 500s linear infinite;
-    animation:move-clouds-back 500s linear infinite;
-} */
-
-/* .galaxy {
-    z-index:0;
-    background: transparent url(http://www.hansenpartnership.com/collab2014/spiral-galaxy.png) no-repeat;
-    -moz-animation:spin-galaxy 300s linear infinite;
-    -ms-animation:spin-galaxy 300s linear infinite;
-    -o-animation:spin-galaxy 300s linear infinite;
-    -webkit-animation:spin-galaxy 300s linear infinite;
-    animation:spin-galaxy 300s linear infinite;
-} */
 
 /* PROGRESS BAR */
 #rocket {
@@ -298,33 +259,35 @@ src: url('../../STJEDISE.TTF') format('truetype');
     position: absolute;
     height: auto;
     width: 20vw;
-    margin-top: 30vw
+    margin-top: 10vw;
 }
 
 .gameover-rocket {
-    position:absolute;
-    height:auto;
-    width:10vw;
-    z-index:10;
+    position: absolute;
+    height: auto;
+    width: 10vw;
+    margin-top: 0vw;
+    z-index: 10;
 }
 
 #rocket-div {
-    position:absolute;
-    height:10vh;
-    width:10vw;
-    z-index:8;
+    position: absolute;
+    height: 10vh;
+    width: 10vw;
+    /* margin-top: 20vw; */
+    z-index: 8;
 }
 #landing-box {
-    position:absolute;
-    height:10vh;
-    width:10vw;
-    z-index:9;
+    position: absolute;
+    height: 10vh;
+    width: 10vw;
+    /* margin-top: 20vw; */
+    z-index: 9;
 }
 
 /* All animations below generated with Bounce.js. Edit at https://goo.gl/HQ2JuX */
 .animation-fly {
 animation: animation-fly 3000ms linear both;
-
 }
 @keyframes animation-fly { 
 0% { transform: translatex(0vw) }
@@ -356,12 +319,10 @@ animation-delay: 3500ms
 100% { transform: translatey(25vw) } 
 }
 
-
 .animation-twist{
 animation: animation-twist 2000ms linear both;
 animation-delay: 3000ms
 }
-
 @keyframes animation-twist { 
 0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 3.2% { -webkit-transform: matrix3d(0.91, -0.415, 0, 0, 0.415, 0.91, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.91, -0.415, 0, 0, 0.415, 0.91, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
@@ -373,7 +334,6 @@ animation-delay: 3000ms
 50.05% { -webkit-transform: matrix3d(0.008, -1, 0, 0, 1, 0.008, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.008, -1, 0, 0, 1, 0.008, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 100% { -webkit-transform: matrix3d(0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
 }
-
 
 /* All animations below generated with Bounce.js. Edit at https://goo.gl/HQ2JuX */
 
@@ -392,6 +352,7 @@ animation: animation 6000ms linear both;
 83.98% { transform: translatex(8.92vw)}
 100% { transform: translatex(9vw)  } 
 }
+
 .animation2 {
 animation: animation2 6000ms linear both;
 }
@@ -407,6 +368,7 @@ animation: animation2 6000ms linear both;
 83.98% { transform: translatex(18.42vw)}
 100% { transform: translatex(18.5vw)  } 
 }
+
 .animation3 {
 animation: animation3 6000ms linear both;
 }
@@ -422,6 +384,7 @@ animation: animation3 6000ms linear both;
 83.98% { transform: translatex(28.92vw)}
 100% { transform: translatex(29vw)  } 
 }
+
 .animation4 {
 animation: animation4 6000ms linear both;
 }
@@ -437,6 +400,7 @@ animation: animation4 6000ms linear both;
 83.98% { transform: translatex(37.92vw)}
 100% { transform: translatex(38vw)  } 
 }
+
 .animation5 {
 animation: animation5 6000ms linear both;
 }
@@ -452,6 +416,7 @@ animation: animation5 6000ms linear both;
 83.98% { transform: translatex(50.42vw)}
 100% { transform: translatex(50.5vw)  } 
 }
+
 .animation6 {
 animation: animation6 6000ms linear both;
 }
@@ -467,6 +432,7 @@ animation: animation6 6000ms linear both;
 83.98% { transform: translatex(61.42vw)}
 100% { transform: translatex(61.5vw)  } 
 }
+
 .animation7 {
 animation: animation7 6000ms linear both;
 }
@@ -482,6 +448,7 @@ animation: animation7 6000ms linear both;
 83.98% { transform: translatex(72.42vw)}
 100% { transform: translatex(72.5vw)  } 
 }
+
 .animation8 {
 animation: animation8 6000ms linear both;
 }
@@ -497,6 +464,7 @@ animation: animation8 6000ms linear both;
 83.98% { transform: translatex(83.42vw)}
 100% { transform: translatex(83.5vw)  } 
 }
+
 .animation9 {
 animation: animation9 6000ms linear both;
 }
