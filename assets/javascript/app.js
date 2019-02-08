@@ -21,7 +21,6 @@ $(document).ready(function() {
     var incorrect = 0;
     var newPostKey = firebase.database().ref().child('posts').push().key;
 
-    //TODO: Need to fix the firebase reference to the specifically saved record
     database.ref().on('child_added', function(snapshot) {
         $('#player').text(snapshot.val().name).addClass('has-text-white');
         $('#correct').text(snapshot.val().correct).addClass('has-text-white');
@@ -97,6 +96,15 @@ $(document).ready(function() {
         var username = $('#name-input').val().trim();
         localStorage.clear();
         localStorage.setItem("name", username);
+   });  
+
+   $('#login').on('click', function(event) {
+        event.preventDefault();
+        var age = $('#age-input').val().trim();
+        var username = $('#name-input').val().trim();
+        if (age > 6 && age < 101 && username !== "") {
+           window.location.href = 'game.html'
+        }
    });  
 
    function endOfGame (correct, incorrect) {

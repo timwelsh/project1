@@ -10,28 +10,27 @@
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         <!-- <link rel="stylesheet" href="STJEDISE.TTF" /> -->
     </head>
-    <body>
+    <body class="body">
         <!-- Starry Animation -->
         <div class="stars"></div>
         <div class="twinkling"></div>
-        <div class="cloud-1"></div>
-        <div class="cloud-2"></div>
-        <!-- <div class="galaxy"></div> -->
+        <div class="galaxy"></div>
+        <!-- <div class="cloud"></div> -->
         <!-- Header -->
-        <section class="hero is-fullheight">
+        <section class="hero">
             <div class="hero-body columns">
                 <div class="column"></div>
-                <div class="container column is-three-quarters">
+                <div class="container column is-full">
                     <p id="title" class="has-text-primary has-text-centered has-text-weight-bold">
                         Space Sounds
                     </p>
-                    <img id="landing-page_image" src="assets/images/astronaut3.png">
+                    <img id="landing-page_image" src="assets/images/astronaut5.png" style="width: 80%;">
                     <br><br>
                     <!-- Enter Name -->
                     <div id="login">
                         <div class="field">
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input is-primary is-rounded" type="name" placeholder="First and Last Name" id="name-input">
+                                <input class="input is-primary is-rounded" type="name" placeholder="First Name" id="name-input">
                                 <span class="icon is-small is-right">
                                     <i class="fas fa-check"></i>
                                 </span>
@@ -52,7 +51,7 @@
                     <!-- Launch Button -->
                     <div class="level field is-large">
                         <p class="control level-item">
-                            <a href="game.html">
+                            <a href="game.html" id="login">
                                 <button id="login-btn" class="button is-danger has-text-centered">
                                 LAUNCH
                                 </button>
@@ -60,7 +59,6 @@
                         </p>
                     </div>
                 </div>
-                <div class="column"></div>
             </div>
         </section>
         <!-- jQuery -->
