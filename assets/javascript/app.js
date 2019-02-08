@@ -21,7 +21,6 @@ $(document).ready(function() {
     var incorrect = 0;
     var newPostKey = firebase.database().ref().child('posts').push().key;
 
-    //TODO: Need to fix the firebase reference to the specifically saved record
     database.ref().on('child_added', function(snapshot) {
         $('#player').text(snapshot.val().name).addClass('has-text-white');
         $('#correct').text(snapshot.val().correct).addClass('has-text-white');
