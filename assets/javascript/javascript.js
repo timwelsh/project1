@@ -273,6 +273,7 @@ function display () { //function that makes the API calls
     var nasa = data.array[counter].nasa
     var wiki = data.array[counter].wiki
     var imageNumber = data.array[counter].imageNumber
+    var modalTitle = data.array[counter].title;
 
     //WIKI API CALL START
     var xhr = new XMLHttpRequest();
@@ -282,6 +283,7 @@ function display () { //function that makes the API calls
     xhr.onload = function() {
         var data = JSON.parse(this.response);
         var wikiInfo= data.extract;
+        $("#modal-title").text(modalTitle);
         $("#modal-content").html(wikiInfo); // This will populate the modal text
     }
     xhr.send();
