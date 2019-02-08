@@ -204,11 +204,11 @@ src: url('../../STJEDISE.TTF') format('truetype');
 /* PROGRESS BAR */
 #rocket {
     height:auto;
-    width:5vw;
+    width:4vw;
     position: absolute;
     z-index:10;
-    margin-top: 2.5%;
-    margin-left: 7vw;
+    margin-top: .5%;
+    margin-left: 3vw;
 }
 
 .planetImage {
@@ -217,78 +217,78 @@ src: url('../../STJEDISE.TTF') format('truetype');
 }
 
 #sun {
-    width: 10vw;
+    width: 5vw;
     height: auto;
     margin-left: 0vw;
 }
 
 #mercury {
-    width: 3vw;
+    width: 2vw;
     height: auto;
-    margin-top: 3.5%;
-    margin-left: 15vw;
+    margin-top: 1.5%;
+    margin-left: 11.5vw;
 }
 
 #venus {
-    width: 5vw;
+    width: 2.5vw;
     height: auto;
-    margin-top: 2.5%;
-    margin-left: 23vw;
+    margin-top: 1.25%;
+    margin-left: 20.5vw;
 }
 #earth {
-    width: 5vw;
+    width: 2.5vw;
     height: auto;
-    margin-top: 2.5%;
-    margin-left: 33vw;
+    margin-top: 1.25%;
+    margin-left: 31vw;
 }
 
 #mars {
-    width: 4vw;
+    width: 2vw;
     height: auto;
-    margin-top: 3%;
-    margin-left: 43vw;
+    margin-top: 1.5%;
+    margin-left: 40.2vw;
 }
 
 #jupiter {
-    width: 8vw;
+    width: 4vw;
     height: auto;
-    margin-top: 1%;
-    margin-left: 52vw;
+    margin-top: .5%;
+    margin-left: 51vw;
 }
 
 #saturn {
-    width: 6vw;
+    width: 3vw;
     height: auto;
-    margin-top: 1.9%;
-    margin-left: 65vw;
+    margin-top: .9%;
+    margin-left: 63.2vw;
 }
 
 #uranus {
-    width: 6vw;
+    width: 3vw;
     height: auto;
-    margin-top: 1.9%;
-    margin-left: 76vw;
+    margin-top: .9%;
+    margin-left: 74vw;
 }
 
 #neptune {
-    width: 6vw;
+    width: 3vw;
     height: auto;
-    margin-top: 1.9%;
-    margin-left: 87vw;
+    margin-top: .9%;
+    margin-left: 85vw;
 }
 
 #kuiper {
     position: relative;
-    width: 5vw;
-    height: 9vw;
+    width: 3vw;
+    height: 5vw;
     margin-top: 0;
-    margin-left: 95vw;
+    margin-left: 97vw;
 }
 
 .progress-bar {
     width: 100%;
-    height: 11vw;
-    background-color: black;
+    height: 5vw;
+    background-color: blue;
 }
 
 /* Animations for Gameover.html */
