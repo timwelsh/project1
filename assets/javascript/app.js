@@ -102,7 +102,8 @@ $(document).ready(function() {
    $('#login').on('click', function(event) {
         event.preventDefault();
         var age = $('#age-input').val().trim();
-        if (age > 6 && age < 101) {
+        var username = $('#name-input').val().trim();
+        if (age > 6 && age < 101 && username !== "") {
            window.location.href = 'game.html'
         }
    });  
