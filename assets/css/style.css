@@ -9,6 +9,10 @@ body {
 src: url('../../STJEDISE.TTF') format('truetype');
   }
 
+#sound-bar {
+    margin: 50px;
+}
+
 #option-2_image {
     width: 100%;
     border: 10px hsl(171, 100%, 41%)solid;
@@ -73,7 +77,7 @@ src: url('../../STJEDISE.TTF') format('truetype');
 
 .page-footer {
     background: #f5f5f5;
-    position: relative;
+    position: fixed;
     padding: 15px;
     height: 100px;
     width: 100%;
