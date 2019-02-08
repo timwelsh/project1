@@ -298,7 +298,7 @@ src: url('../../STJEDISE.TTF') format('truetype');
     position: absolute;
     height: auto;
     width: 20vw;
-    margin-top: 30vw
+    margin-top: -15vw;
 }
 
 .gameover-rocket {
@@ -319,6 +319,7 @@ src: url('../../STJEDISE.TTF') format('truetype');
     height:10vh;
     width:10vw;
     z-index:9;
+    margin-top: -45vw;
 }
 
 /* All animations below generated with Bounce.js. Edit at https://goo.gl/HQ2JuX */
