@@ -1,9 +1,9 @@
 body {
     background: #000;
-    position: absolute;
     width: 100%;
-    height: 100%;
+    background: cover;
 }
+
 
 #option-2_image {
     width: 100%;
@@ -157,11 +157,15 @@ body {
 
 .stars {
     background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+    position: fixed;
+    background: cover;
     z-index:0;
 }
  
 .twinkling {
     background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+    position: fixed;
+    background: cover;
     z-index:0;
 
     -moz-animation:move-twink-back 200s linear infinite;
