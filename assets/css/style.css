@@ -6,12 +6,21 @@ body {
 
 @font-face {
     font-family: STJEDISE;
-src: url('../../STJEDISE.TTF') format('truetype');
-  }
+    src: url('../../STJEDISE.TTF') format('truetype');
+}
+
 #sound-bar {
     margin: 50px;
 }
- #option-1_image {
+
+/* Header */
+#title {
+    font-family: STJEDISE;
+    font-size: 100px;
+    letter-spacing: 4px;
+}
+
+#option-1_image {
     width: 100%;
     border: 10px hsl(171, 100%, 41%) solid;
     margin-bottom: 20vh;
@@ -40,13 +49,12 @@ src: url('../../STJEDISE.TTF') format('truetype');
     visibility: hidden;
 }
 
+/* Login Button */
 #login {
-    width: 20rem;
     position: relative;
     margin: 0 auto;
 }
 
-/* Make login button circular */
 #login-btn, #answer-btn, #nasa-btn {
     border-radius: 50%;
     width: 110px;
@@ -55,10 +63,9 @@ src: url('../../STJEDISE.TTF') format('truetype');
     font-weight: bold;
 }
 
-#title {
-    font-family: STJEDISE;
-    font-size: 100px;
-    letter-spacing: 4px;
+/* Sound Bar */
+#sound-bar {
+    margin: 50px;
 }
 
 .audio-wrapper {
@@ -71,10 +78,22 @@ src: url('../../STJEDISE.TTF') format('truetype');
     height: 30px;
 }
 
+#option-2_image {
+    width: 100%;
+    border: 10px hsl(171, 100%, 41%)solid;
+    margin-bottom: 20vh;
+}
+#option-1_image {
+    width: 100%;
+    border: 10px hsl(171, 100%, 41%) solid;
+    margin-bottom: 20vh;
+}
+
 .border {
     border: 2px solid #fff;
 }
 
+/* Hover Effect for Images */
 .grayscale{ 
     border: 1px solid black;
     filter: grayscale(100%);
@@ -92,6 +111,7 @@ src: url('../../STJEDISE.TTF') format('truetype');
       cursor: pointer;
 }
 
+/* Footer */
 .page-footer {
     background: #f5f5f5;
     position: fixed;
@@ -100,8 +120,28 @@ src: url('../../STJEDISE.TTF') format('truetype');
     width: 100%;
     bottom: 0;
 }
+
 #score {
     z-index: 10;
+}
+
+/* ANSWER and NASA Buttons */
+#answer-btn {
+    background-image:url(../images/moon.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:100px;
+    height:100px;
+    z-index: 100;
+}
+
+#nasa-btn {
+    background-image:url(../images/saturn.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:100px;
+    height:100px;
+    z-index: 100;
 }
 
 #andromeda {
