@@ -49,7 +49,7 @@ var data = {
         },
         {
         arrayPosition : "5",
-        title: "Jupiter’s Largest Moon Ganymede",
+        title: "Jupiter's Largest Moon, Ganymede",
         wiki: "Ganymede_(moon)",
         nasa: "Ganymede",
         imageNumber: "8",
@@ -208,7 +208,7 @@ var wrongImages= [
     file: "assets/images/The_Crab_Nebula.png"
     },
     {
-    title: "Horsehead Nebula",
+    title: "The Horsehead Nebula",
     file: "assets/images/horsehead-nebula.jpg"
     },
     {
@@ -228,7 +228,7 @@ var wrongImages= [
     file: "assets/images/A_Strange_Ring_Galaxy.png"
     },
     {
-    title: "A Spiral Galaxy : NGC 278",
+    title: "A Spiral Galaxy: NGC 278",
     file: "assets/images/A_Spiral_Galaxy_NGC_278.png"
     },
     {
@@ -240,7 +240,7 @@ var wrongImages= [
     file: "assets/images/Blast_Wave_from_a_Supernova.png"
     },
     {
-    title: "Eagle Nebula",
+    title: "The Eagle Nebula",
     file: "assets/images/Eagle_Nebula.png"
     }		
 ]
@@ -253,33 +253,33 @@ function display () { //function that makes the API calls
     $("#option-2_header").empty();
     $("#option-1_image").attr("src", "");
     $("#option-2_image").attr("src", "");
-    $(".audio").empty()
-    var variable = Math.floor(Math.random() * imageArray.length)
+    $(".audio").empty();
+    var variable = Math.floor(Math.random() * imageArray.length);
     counter = imageArray[variable];
     placement = imagePick[Math.floor(Math.random() * imagePick.length)];
 
-    var audioSource = $("<source>").attr("src", data.array[counter].sound); //.css({display: 'block', width: '100%', margin: '0 auto'});
+    var audioSource = $("<source>").attr("src", data.array[counter].sound);
     var audioTag = $("<audio>").attr("controls", true);
-    audioTag.append(audioSource)
-    $(".audio").append(audioTag)
+    audioTag.append(audioSource);
+    $(".audio").append(audioTag);
     $("audio").css("height", "50px");
     $("audio").css("width", "300px");
 
     for (i=0; i < imageArray.length; i++) {
         if (imageArray[i] === counter ) {
-            imageArray.splice(i, 1)
+            imageArray.splice(i, 1);
         }
     }
-    var nasa = data.array[counter].nasa
-    var wiki = data.array[counter].wiki
-    var imageNumber = data.array[counter].imageNumber
+    var nasa = data.array[counter].nasa;
+    var wiki = data.array[counter].wiki;
+    var imageNumber = data.array[counter].imageNumber;
     var modalTitle = data.array[counter].title;
 
-    //WIKI API CALL START
+    // WIKI API CALL START
     var xhr = new XMLHttpRequest();
-    var url = "https://en.wikipedia.org/api/rest_v1/page/summary/"+ wiki;
+    var url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + wiki;
 
-    xhr.open('GET', url, true);
+    xhr.open("GET", url, true);
     xhr.onload = function() {
         var data = JSON.parse(this.response);
         var wikiInfo= data.extract;
@@ -288,9 +288,8 @@ function display () { //function that makes the API calls
     }
     xhr.send();
 
-
     // NASA API CALL START
-    var queryURL = "https://images-api.nasa.gov/search?q="+nasa
+    var queryURL = "https://images-api.nasa.gov/search?q=" + nasa;
 
     $.ajax({
         url: queryURL,
@@ -300,33 +299,33 @@ function display () { //function that makes the API calls
         console.log(response); 
         var results = response.collection.items[imageNumber].links[0].href;
         var header = data.array[counter].title;
-        console.log("Image from the array: Number " + counter)
-	 if (placement === 0) {
-        $("#option-1_image").attr("src", results);
-        $("#image1").attr("src", results);
-		$("#option-1_header").text(header);
-		$("#option-1_header").css("text-align", "center");
-		answer = "option-1_image";
-		$("#option-2_image").attr("src", wrongImages[variable].file);
-		$("#option-2_header").text(wrongImages[variable].title);
-		$("#option-2_header").css("text-align", "center");
-    } else {
-		$("#option-2_image").attr("src", results);
-		$("#option-2_header").text(header);
-		$("#option-2_header").css("text-align", "center");
-		answer =  "option-2_image";
-		$("#option-1_image").attr("src", wrongImages[variable].file);
-		$("#option-1_header").text(wrongImages[variable].title);
-		$("#option-1_header").css("text-align", "center");
-    }
-    for (i=0; i < wrongImages.length; i++) {
-        if (i === variable) {
-            wrongImages.splice(i, 1)
+        console.log("Image from the array: Number " + counter);
+        if (placement === 0) {
+            $("#option-1_image").attr("src", results);
+            $("#image1").attr("src", results);
+            $("#option-1_header").text(header);
+            $("#option-1_header").css("text-align", "center");
+            answer = "option-1_image";
+            $("#option-2_image").attr("src", wrongImages[variable].file);
+            $("#option-2_header").text(wrongImages[variable].title);
+            $("#option-2_header").css("text-align", "center");
+        } else {
+            $("#option-2_image").attr("src", results);
+            $("#option-2_header").text(header);
+            $("#option-2_header").css("text-align", "center");
+            answer =  "option-2_image";
+            $("#option-1_image").attr("src", wrongImages[variable].file);
+            $("#option-1_header").text(wrongImages[variable].title);
+            $("#option-1_header").css("text-align", "center");
         }
-    }
-})
+        for (i=0; i < wrongImages.length; i++) {
+            if (i === variable) {
+                wrongImages.splice(i, 1);
+            }
+        }
+    })
 }
 
 function rocketLand () { //switches the rocket image source
-    $('#gameover-rocket').attr('src', 'assets/images/unpowered.png');
+    $("#gameover-rocket").attr("src", "assets/images/unpowered.png");
 }
