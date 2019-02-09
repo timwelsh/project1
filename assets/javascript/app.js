@@ -78,9 +78,6 @@ $(document).ready(function() {
             endOfGame(correct, incorrect);
         } 
         planet = planetArray[counter2]
-        console.log(xwing)
-        console.log(pelican)
-        console.log(enterprise)
         if (correct !== 2 && correct !== 4 && correct !== 7 || (xwing === true && correct === 2) || (pelican === true && correct === 4) || (enterprise === true && correct === 7)) {
             checkStatus();
         }
@@ -107,17 +104,17 @@ $(document).ready(function() {
     //Changes the users ship to the ship displayed
     $('.modal_upgrade').on('click', function(e) {
         if (correct === 2 ) {
-            $('#rocket').attr('src', shipArray[0]);
+            $('#rocket').attr('src', 'assets/images/x-wing-on.png');
             $('#rocket').css('margin-top', '1.5%');
             xwing = true;
         }
         if (correct === 4 ) {
-            $('#rocket').attr('src', shipArray[1]);
+            $('#rocket').attr('src', 'assets/images/pelican-on.png');
             $('#rocket').css('margin-top', '1%');
             pelican = true;
         }
         if (correct === 7 ) {
-            $('#rocket').attr('src', shipArray[2]);
+            $('#rocket').attr('src', 'assets/images/enterprise-on.png');
             $('#rocket').css('margin-top', '1.5%');
             enterprise = true;
         }
@@ -148,11 +145,35 @@ $(document).ready(function() {
         counter2++
         if (counter2 < 14){
         $('#rocket').addClass('animation'+counter2).removeClass('animation'+(counter2-1));
-        if (upgrade === false) {
-            $('#rocket').attr('src', 'assets/images/rocket.png')
-                timer = setTimeout(switchImage, 1000)
+            console.log(upgrade)
+            console.log(pelican)
+            console.log(xwing)     
+            if (upgrade === false) {
+                $('#rocket').attr('src', 'assets/images/rocket.png')
+                    timer = setTimeout(switchImage, 1000)
             }
-        }
+            else if (xwing === true && pelican === false) {
+                console.log("hello")
+                $('#rocket').attr('src','assets/images/x-wing-on.png')
+                timer = setTimeout(function() {
+                    $('#rocket').attr('src', 'assets/images/x-wing.png')
+                }, 1000)
+            }
+            else if (pelican === true && enterprise === false) {
+                console.log("hello")
+                $('#rocket').attr('src','assets/images/pelican-on.png')
+                timer = setTimeout(function() {
+                    $('#rocket').attr('src', 'assets/images/pelican.png')
+                }, 1000)
+            }
+            else if (enterprise === true) {
+                console.log("hello")
+                $('#rocket').attr('src','assets/images/enterprise-on.png')
+                timer = setTimeout(function() {
+                    $('#rocket').attr('src', 'assets/images/enterprise.png')
+                }, 1000)
+            }
+        }   
     };
     
     //switches the rocket image 
