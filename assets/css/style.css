@@ -55,6 +55,18 @@ body {
     margin: 0 auto;
 }
 
+#name-field {
+    width: 300px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#age-field {
+    width: 300px;
+    position: relative;
+    margin: 0 auto;
+}
+
 #login-btn, #answer-btn, #nasa-btn {
     border-radius: 50%;
     width: 110px;
